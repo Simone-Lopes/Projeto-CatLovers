@@ -1,0 +1,109 @@
+/* Tudo na página */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+/* Navegação superior */
+.container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  width: 100vw;
+  background: #FFB8BC;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: auto;
+
+}
+
+.logo img {
+  display: flex;
+  width: 100%;
+}
+
+.org-nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20%;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  color: #393D46;
+  font-weight: 600;
+}
+
+.navbar2 {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  color: #393D46;
+  font-weight: 600;
+}
+
+li {
+  margin: 20px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #393D46;
+}
+
+.paginas :hover {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.agora a {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+
+/* Footer */
+
+.footer {
+  width: 100vw;
+  background-color: #FFB8BC;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+}
+
+.footer-info h1 {
+  color: #393D46;
+  font-size: 20px;
+}
+
+.footer-info a {
+  color: #393D46;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.footer-nav:hover {
+  color: #ffffff;
+  font-weight: 600;
+}
