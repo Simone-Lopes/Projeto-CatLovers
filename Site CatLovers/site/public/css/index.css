@@ -1,83 +1,365 @@
 /* Banner  Inicial */
 
-.banner-inicial{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-  
-  }
-  .banner-inicial img{
-    height: 40vw;
-    margin-left: 15%;
-  }
+.banner-inicial {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 
-  /* Apresentação do projeto */
-  .company{
-    width: 100vw;
-    height: 90vh;
-    background-color: #FAEAEB;
-    display: flex;
-    justify-content: space-between;
-  }
-  .company-title{
-    display: flex;
-    width: 100%;
-    align-items: baseline;
-  }
-  .company-title img{
-    height: 5vh;
-  }
-  .company-title h1{
-    color: #393D46;
-    margin-top: 100px;
-  }
-  .company-text{
-    color: #393D46;
-    font-size: 20px;
-    margin-top: 20px;
-  }
-  .apresentation-text{
-    width: 50%;
-    height: auto;
-    padding: 10px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  .apresentation-image{
-    width: 50%;
-    height: auto;
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+}
 
-  .apresentation-image img{
-    height: 60vh;
-    border-radius: 180%;
-    margin-top: 40px;
-    margin-left: 50px;
-  }
-  .circle{
-    height: 60vh;
-    width: 30vw;
-    border-radius: 180%;
-    background-color: #FFB8BC;
-  }
-  .button-more{
-    width: 10vw;
-    height: 5vh;
-    background-color: #F3838D;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    margin-top: 40px;
-  }
-  .button-more:hover{
-    background-color: #FFB8BC;
-    
-  }
+.banner-inicial img {
+  height: 40vw;
+  margin-left: 15%;
+}
+
+/* Apresentação do projeto */
+.company {
+  width: 100vw;
+  height: 90vh;
+  background-color: #FAEAEB;
+  display: flex;
+  justify-content: space-between;
+}
+
+.apresentation-text {
+  width: 50%;
+  height: auto;
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.company-title {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+}
+
+.company-title img {
+  height: 5vh;
+}
+
+.company-title h1 {
+  color: #393D46;
+  margin-top: 70px;
+}
+
+.company-text {
+  color: #393D46;
+  font-size: 20px;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.apresentation-image {
+  width: 50%;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.apresentation-image img {
+  height: 60vh;
+  border-radius: 180%;
+  margin-top: 40px;
+  margin-left: 50px;
+}
+
+.circle {
+  height: 60vh;
+  width: 30vw;
+  border-radius: 180%;
+  background-color: #FFB8BC;
+}
+
+.button-more {
+  width: 12vw;
+  height: 7vh;
+  background-color: #F3838D;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  margin-top: 20px;
+}
+
+.button-more:hover {
+  background-color: #FFB8BC;
+}
+
+/* Cards de passo a passo */
+.passos {
+  width: 100vw;
+  height: 105vh;
+  background-color: #fffafa;
+}
+
+.passos-titulo {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.passos-titulo h1 {
+  color: #F3838D;
+  font-size: 60px;
+  margin: 0%;
+}
+
+.passos-titulo p {
+  color: #393D46;
+  font-size: 20px;
+  margin: 0%;
+  margin-bottom: 40px;
+}
+
+.fundo-color {
+  width: 100vw;
+  height: 30vh;
+  background-color: #FFB8BC;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+.card-cat {
+  width: 21vw;
+  height: 62vh;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-top: -115px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 10px rgba(91, 91, 91, 0.77);
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.card-cat:hover {
+  margin-top: -135px;
+}
+
+.card-cat img {
+  width: 290px;
+  height: auto;
+  border-radius: 10px;
+
+}
+
+.card-text {
+  width: 280px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0%;
+}
+
+.card-text h2 {
+  color: #393D46;
+  margin: 0%;
+  margin: 20px;
+}
+
+.card-text p {
+  color: #393D46;
+  margin: 0%;
+  margin-bottom: 20px;
+}
+
+.button-acesse-aqui {
+  background: none;
+  color: #F3838D;
+  border: none;
+  border-bottom: 1px solid #FFB8BC;
+}
+
+.button-acesse-aqui:hover {
+  color: #FFB8BC;
+}
+
+/* Banner simulado */
+.banner-simulado {
+  width: 100vw;
+  height: 90vh;
+  background-image: url(../assets/imgs/gato-banner-simulado.jpg);
+  background-size: cover;
+  /* filter: brightness(90%); */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.banner-text {
+  width: 23%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-items: flex-end;
+  margin-right: 10%;
+
+}
+
+.banner-text h1 {
+  color: #ffffff;
+  text-shadow: rgb(47, 47, 47) 0.1em 0.1em 0.2em;
+  font-size: 60px;
+  text-transform: uppercase;
+  margin: 0%;
+}
+
+.banner-text p {
+  color: #ffffff;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-shadow: rgb(47, 47, 47) 0.1em 0.1em 0.2em;
+}
+
+.banner-text span {
+  color: #F3838D;
+}
+
+/* Banner Adote */
+.banner-adote {
+  width: 100vw;
+  height: 90vh;
+  background-image: url(../assets/imgs/mulher-ruiva-com-gato.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Catblog */
+.catblog {
+  background-color: #fffafa;
+  width: 100vw;
+  height: 105vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catblog-titulo {
+  width: 55%;
+  background-color: #F3838D;
+  border-radius: 20px;
+  margin-top: 60px;
+  padding: 20px;
+}
+
+.catblog-titulo h1 {
+  color: #ffffff;
+  font-size: 40px;
+  margin: 0%;
+}
+
+.catblog-titulo p {
+  color: #ffffff;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin: 0%;
+}
+
+.catblog-container {
+  width: 59%;
+  height: auto;
+  display: flex;
+}
+
+.card-catblog-texto {
+  background-color: white;
+  box-shadow: 1px 1px 10px rgba(161, 161, 161, 0.77);
+  width: 100%;
+  height: 70vh;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.card-catblog-espaco {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  margin-top: 20%;
+}
+
+.card-catblog-foto {
+  box-shadow: 1px 1px 10px rgba(161, 161, 161, 0.77);
+  width: 100%;
+  height: 70vh;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.card-catblog-foto img {
+  width: 100%;
+  height: 70vh;
+  border-radius: 20px;
+}
+
+.card-catblog-texto p {
+  color: #393D46;
+}
+
+.card-catblog-texto h1 {
+  color: #F3838D;
+}
+
+/* Finalizando com gatinho */
+.final-gato {
+  width: 100vw;
+  height: 80vh;
+  background-color: #FAEAEB;
+  display: flex;
+  flex-direction: column;
+}
+
+.final-gato img {
+  height: 40vh;
+}
+
+.container-final {
+  width: 90%;
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.final-text {
+  width: 40%;
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.final-gato h1 {
+  color: #393D46;
+  align-self: center;
+  font-size: 60px;
+  margin-top: 30px;
+}
+
+.final-gato span {
+  color: #F3838D;
+  margin: 0%;
+  align-self: center;
+  /* margin-top: 20%; */
+}

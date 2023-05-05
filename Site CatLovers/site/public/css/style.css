@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #FFFFFF;
+  background-color: #fffafa;
   overflow-x: hidden;
 }
 
@@ -65,8 +65,7 @@ li {
 }
 
 .paginas :hover {
-  font-weight: 800;
-  color: #ffffff;
+  border-bottom: 1px solid #393D46;
 }
 
 .agora a {
@@ -104,6 +103,5 @@ li {
 }
 
 .footer-nav:hover {
-  color: #ffffff;
-  font-weight: 600;
+  font-weight: 800;
 }
