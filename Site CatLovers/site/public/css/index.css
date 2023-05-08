@@ -184,7 +184,6 @@
   background: none;
   color: #F3838D;
   border: none;
-  border-bottom: 1px solid #FFB8BC;
 }
 
 .button-acesse-aqui:hover {
@@ -291,10 +290,10 @@
 }
 
 .card-catblog-espaco {
-  width: 80%;
+  width: 90%;
   height: auto;
   margin: auto;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .card-catblog-foto {
@@ -311,15 +310,30 @@
   border-radius: 20px;
 }
 
-.card-catblog-texto p {
+.card-catblog-texto ol {
   color: #393D46;
+  padding: 0%;
 }
 
 .card-catblog-texto h1 {
   color: #F3838D;
 }
 
-/* Finalizando com gatinho */
+/* Finalizando Serviços */
+.final-gato h1 {
+  color: #393D46;
+  align-self: center;
+  font-size: 60px;
+  margin-top: 30px;
+  margin: 5px;
+}
+
+.final-gato span, .final-card h2{
+  color: #F3838D;
+  margin: 0%;
+  align-self: center;
+  /* margin-top: 20%; */
+}
 .final-gato {
   width: 100vw;
   height: 80vh;
@@ -331,16 +345,27 @@
 .final-gato img {
   height: 40vh;
 }
-
 .container-final {
   width: 90%;
   height: 80vh;
   margin: auto;
   display: flex;
-  justify-content: center;
   align-items: end;
+  justify-content: space-around;
 }
-
+.final-card{
+  width: 50%;
+  margin-bottom: 15%;
+}
+.final-bloco{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.final-bloco h1{
+  margin-bottom: 20%;
+  margin-right: 3%;
+}
 .final-text {
   width: 40%;
   height: 80vh;
@@ -350,16 +375,3 @@
   text-align: center;
 }
 
-.final-gato h1 {
-  color: #393D46;
-  align-self: center;
-  font-size: 60px;
-  margin-top: 30px;
-}
-
-.final-gato span {
-  color: #F3838D;
-  margin: 0%;
-  align-self: center;
-  /* margin-top: 20%; */
-}
