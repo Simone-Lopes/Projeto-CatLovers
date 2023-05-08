@@ -12,46 +12,62 @@
 
     <link rel="icon" href="./assets/icon/favicon.png">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
 
 </head>
 
 <body>
 
-      <!-- Navbar superior -->
-      <div class="header">
+    <!-- Navbar superior -->
+    <div class="header">
         <div class="container">
-    
-          <div class="logo">
-            <img class="logo" src="./assets/imgs/Logotipo-horizontal.png" alt="">
-          </div>
-    
-          <div class="org-nav-bar">
-            <ul class="navbar">
-              <li class="paginas"><a href="index.html">Home</a></li>
-              <li class="paginas"><a href="simulador.html">Simulador</a></li>
-              <li class="paginas"><a href="sobre.html">Sobre</a></li>
-              <li class="paginas"><a href="contato.html">Contato</a></li>
-            </ul>
-            <ul class="navbar2">
-              <li class="paginas"><a href="login.html">Login</a></li>
-              <li>|</li>
-              <li class="agora"><a href="cadastro.html">Cadastro</a></li>
-            </ul>
-          </div>
-    
+
+            <div class="logo">
+                <img class="logo" src="./assets/imgs/Logotipo-horizontal.png" alt="">
+            </div>
+
+            <div class="org-nav-bar">
+                <ul class="navbar">
+                    <li class="paginas"><a href="index.html">Home</a></li>
+                    <li class="paginas"><a href="simulador.html">Simulador</a></li>
+                    <li class="paginas"><a href="sobre.html">Sobre</a></li>
+                    <li class="paginas"><a href="contato.html">Contato</a></li>
+                </ul>
+                <ul class="navbar2">
+                    <li class="paginas"><a href="login.html">Login</a></li>
+                    <li>|</li>
+                    <li class="agora"><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </div>
+
         </div>
-      </div>
+    </div>
 
-
-    <div class="login">
+    <!-- iniciando tela -->
+    <div class="cadastro">
+        <!-- mensagem de erro -->
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
             </div>
         </div>
-        <div class="container">
-            <div class="card card-cadastro">
-                <h2>Bem-vindo!</h2>
+
+        <div class="container-cadastro">
+
+            <div class="cards">
+
+            <div class="card-imagem">
+                <h1>Adote um amigo!</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+
+            <!-- formulário -->
+            <div class="card-cadastro">
+                <div class="icon-user">
+                    <img src="./assets/imgs/icon-usuario.png" alt="icone do usuário">
+                </div>
+
+                <h2>Se torne um CatLover!</h2>
                 <div class="formulario">
 
                     <!--
@@ -60,31 +76,53 @@
                      -->
 
                     <div class="campo">
-                        <span>Nome:</span>
-                        <input id="nome_input" type="text" placeholder="Seu nome">
+                        <span>Nome:</span><br>
+                        <input id="nome_input" type="text" placeholder="Digite seu nome">
                     </div>
+
                     <div class="campo">
-                        <span>CPF:</span>
-                        <input id="cpf_input" type="number" placeholder="Seu CPF">
+                        <span>CPF:</span><br>
+                        <input id="cpf_input" type="number" placeholder="Digite seu CPF">
                     </div>
+
                     <div class="campo">
-                        <span>E-mail:</span>
-                        <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+                        <span>Estado:</span><br>
+                        <input id="estado_input" type="text" placeholder="Digite seu estado">
                     </div>
+
                     <div class="campo">
-                        <span>Senha:</span>
-                        <input id="senha_input" type="password" placeholder="******">
+                        <span>Cidade:</span><br>
+                        <input id="cidade_input" type="text" placeholder="Digite sua cidade">
                     </div>
+
                     <div class="campo">
-                        <span>Confirmação da Senha:</span>
-                        <input id="confirmacao_senha_input" type="password" placeholder="******">
+                        <span>Número de celular:</span><br>
+                        <input id="num_input" type="number" placeholder="Digite o número o seu celular">
                     </div>
-                    <button class="botao" onclick="cadastrar()">Cadastrar</button>
+
+                    <div class="campo">
+                        <span>E-mail:</span><br>
+                        <input id="email_input" type="text" placeholder="Digite seu e-mail">
+                    </div>
+
+                    <div class="campo">
+                        <span>Senha:</span><br>
+                        <input id="senha_input" type="password" placeholder="Digite sua senha">
+                    </div>
+
+                    <div class="campo">
+                        <span>Confirmação da Senha:</span><br>
+                        <input id="confirmacao_senha_input" type="password" placeholder="Digite sua senha novamente">
+                    </div>
+
+                    <button class="button-cadastrar" onclick="cadastrar()">Cadastrar</button>
+                    <a href="./cadastro.html">Não tem uma conta?</a>
 
                 </div>
-                <div id="div_aguardar" class="loading-div">
+            </div>
+                <!-- <div id="div_aguardar" class="loading-div">
                     <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
+                </div> -->
 
                 <div id="div_erros_login"></div>
             </div>
@@ -92,34 +130,34 @@
     </div>
 
     <div class="footer">
-      <div class="container">
-  
-        <div class="footer-left">
-          <img src="./assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
+        <div class="container">
+
+            <div class="footer-left">
+                <img src="./assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
+            </div>
+
+            <div class="footer-info">
+                <h1>Compania</h1>
+                <a class="footer-nav" href="index.html">Home</a>
+                <a class="footer-nav" href="sobreNos.html">Sobre Nós</a>
+                <a class="footer-nav" href="faleConosco.html">Fale Conosco</a>
+            </div>
+
+            <div class="footer-info">
+                <h1>Usuário</h1>
+                <a class="footer-nav" href="login.html">Login</a>
+                <a class="footer-nav" href="cadastro.html">Cadastro</a>
+                <a class="footer-nav" href="cadastroGato.html">Cadastrar gato</a>
+            </div>
+
+            <div class="footer-info">
+                <h1>Gatinhos</h1>
+                <a class="footer-nav" href="simulador.html">Adoção</a>
+                <a class="footer-nav" href="simulador.html">CatBlog</a>
+                <a class="footer-nav" href="simulador.html">Simulação</a>
+            </div>
+
         </div>
-  
-        <div class="footer-info">
-          <h1>Compania</h1>
-          <a class="footer-nav" href="index.html">Home</a>
-          <a class="footer-nav" href="sobreNos.html">Sobre Nós</a>
-          <a class="footer-nav" href="faleConosco.html">Fale Conosco</a>
-        </div>
-  
-        <div class="footer-info">
-          <h1>Usuário</h1>
-          <a class="footer-nav" href="login.html">Login</a>
-          <a class="footer-nav" href="cadastro.html">Cadastro</a>
-          <a class="footer-nav" href="cadastroGato.html">Cadastrar gato</a>
-        </div>
-  
-        <div class="footer-info">
-          <h1>Gatinhos</h1>
-          <a class="footer-nav" href="simulador.html">Adoção</a>
-          <a class="footer-nav" href="simulador.html">CatBlog</a>
-          <a class="footer-nav" href="simulador.html">Simulação</a>
-        </div>
-  
-      </div>
     </div>
 
 

@@ -1,0 +1,90 @@
+/* Banner do fundo */
+.login {
+    width: 100vw;
+    height: 90vh;
+    background-image: url(../assets/imgs/gato-preto-deitado.jpg);
+    background-size: cover;
+}
+
+.container-login {
+    width: 80%;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+/* Formulário */
+.card-login {
+    width: 28vw;
+    height: 75vh;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 10px rgba(91, 91, 91, 0.77);
+}
+
+/* Imagem user */
+.icon-user {
+    background-color: #F3838D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 180px;
+    width: 100px;
+    height: 100px;
+    margin-top: 10%;
+}
+
+.icon-user img {
+    width: 60px;
+    height: 60px;
+}
+
+.card-login h2{
+    color: #393D46;
+}
+/* Campos de entrada */
+.formulario{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario span{
+    color: #979797;
+}
+.formulario input{
+    background-color: #f7f7f7;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #cfcece;
+}
+::placeholder{
+    color: #979797;
+}
+.formulario a{
+    text-decoration: none;
+    color: #b9b9b9;
+    border-bottom:1px solid #b9b9b9;
+    font-size: 12px;
+}
+.button-entrar{
+    background-color: #F3838D;
+    color: #ffffff;
+    font-size: 15px;
+    width: 305px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+}
