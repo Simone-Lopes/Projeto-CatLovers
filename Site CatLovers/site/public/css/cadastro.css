@@ -20,6 +20,7 @@
     width: 100vw;
     height: 120vh;
     display: flex;
+    border-radius: 20px;
     /* justify-content: center;
     align-items: center;  */
 }
@@ -37,6 +38,12 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.card-cadastro{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 .card-imagem h1{
     color: white;
@@ -46,6 +53,7 @@
     margin-top: 15%;
     margin-bottom: 2%;
     font-size: 60px;
+    opacity: 1.0;
 }
 .card-imagem p{
     color: white;
@@ -96,14 +104,25 @@
     border-radius: 5px;
     border: 1px solid #cfcece;
 }
+.formulario select{
+    background-color: #f7f7f7;
+    width: 308px;
+    height: 34px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #cfcece;
+}
 ::placeholder{
     color: #979797;
 }
+select:invalid {
+    color: #979797;
+  }
 .formulario a{
     text-decoration: none;
     color: #b9b9b9;
     border-bottom:1px solid #b9b9b9;
-    font-size: 12px;
+    font-size: 15px;
 }
 .button-cadastrar{
     background-color: #F3838D;

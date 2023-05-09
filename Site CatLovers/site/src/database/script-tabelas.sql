@@ -1,22 +1,49 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+-- Banco de dados do projeto CatLovers
+-- Desenvolvido por Simone Lopes dos Santos
 
-/*
-comandos para mysql - banco local - ambiente de desenvolvimento
-*/
+DROP DATABASE catlovers;
+CREATE DATABASE catlovers;
+USE catlovers;
 
-CREATE DATABASE aquatech;
-
-USE aquatech;
-
+-- Tabela para cadastrar usuário
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
+	id INT PRIMARY KEY auto_increment,
+	nome VARCHAR(40),
+    cpf CHAR(11),
+    estado CHAR(2),
+    cidade VARCHAR(50),
+	telefoneCelular CHAR(11),
 	email VARCHAR(50),
 	senha VARCHAR(50)
 );
 
+-- Tabela para cadastrar gato
+CREATE TABLE gato(
+	idGato INT PRIMARY KEY auto_increment,
+	nomeGato VARCHAR(20),
+	sexo VARCHAR(20),
+		constraint chkSexo check (sexo in ('macho', 'femea')),
+	idade VARCHAR(10),
+		constraint chkIdade check (idade in ('filhote', 'pre-adulto', 'adulto', 'idoso', 'nao identificado')),
+	porte VARCHAR(20),
+		constraint chkPorte check (porte in ('pequeno', 'medio', 'grande')),
+	vacina VARCHAR(10),
+		constraint chkVacina check (vacina in ('sim', 'nao', 'nao sei')),
+	castrado VARCHAR(10),
+		constraint chkCastrado check (castrado in ('sim', 'nao', 'nao sei')),
+	pelagem VARCHAR(50),
+    tamanho FLOAT,
+    peso FLOAT,
+	historia VARCHAR(200),
+    linkFotos VARCHAR(200),
+    foto VARCHAR(50),
+	publicado datetime default current_timestamp,
+    
+    fk_usuario INT,
+    CONSTRAINT fk_usuario FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+);
+
+-- Tabela para comentários 
 CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
@@ -25,75 +52,16 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300)
-);
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
+INSERT INTO usuario values 
+	(null, 'Simone Lopes', '56485406808', 'SP', 'São Paulo', '11968023976', 'simone@gmail.com', '123456');
 
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
-
-
-/*
-comando para sql server - banco remoto - ambiente de produção
-*/
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-);
-
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY IDENTITY(1,1),
-	descricao VARCHAR(300)
-);
-
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT FOREIGN KEY REFERENCES aquario(id)
-);
-
-/*
-comandos para criar usuário em banco de dados azure, sqlserver,
-com permissão de insert + update + delete + select
-*/
-
-CREATE USER [usuarioParaAPIWebDataViz_datawriter_datareader]
-WITH PASSWORD = '#Gf_senhaParaAPIWebDataViz',
-DEFAULT_SCHEMA = dbo;
-
-EXEC sys.sp_addrolemember @rolename = N'db_datawriter',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
-
-EXEC sys.sp_addrolemember @rolename = N'db_datareader',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
+INSERT INTO gato values 
+	(null, 'Lucy', 'femea', 'filhote', 'medio', 'sim', 'nao', 'Laranja', '0.20', '1.20', 'Lucy foi resgatada em uma venda ilegal de animais.', 'http://www.sisi.com', 'siames', default, 1);
+    
+    select * from usuario;
+	select * from gato;
+    
+	select * from usuario join gato on  gato.fk_usuario = usuario.id;
+    
+    

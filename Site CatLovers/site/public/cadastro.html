@@ -29,7 +29,6 @@
             <div class="org-nav-bar">
                 <ul class="navbar">
                     <li class="paginas"><a href="index.html">Home</a></li>
-                    <li class="paginas"><a href="simulador.html">Simulador</a></li>
                     <li class="paginas"><a href="sobre.html">Sobre</a></li>
                     <li class="paginas"><a href="contato.html">Contato</a></li>
                 </ul>
@@ -56,70 +55,98 @@
 
             <div class="cards">
 
-            <div class="card-imagem">
-                <h1>Adote um amigo!</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-
-            <!-- formulário -->
-            <div class="card-cadastro">
-                <div class="icon-user">
-                    <img src="./assets/imgs/icon-usuario.png" alt="icone do usuário">
+                <div class="card-imagem">
                 </div>
 
-                <h2>Se torne um CatLover!</h2>
-                <div class="formulario">
+                <!-- formulário -->
+                <div class="card-cadastro">
+                    <div class="icon-user">
+                        <img src="./assets/imgs/icon-usuario.png" alt="icone do usuário">
+                    </div>
 
-                    <!--
+                    <h2>Se torne um CatLover!</h2>
+                    <div class="formulario">
+
+                        <!--
                          Para inserir mais um campo, copie uma das inputs abaixo.
                          Assim que inserir vá para o script abaixo.
                      -->
 
-                    <div class="campo">
-                        <span>Nome:</span><br>
-                        <input id="nome_input" type="text" placeholder="Digite seu nome">
+                        <div class="campo">
+                            <span>Nome:</span><br>
+                            <input id="nome_input" type="text" placeholder="Digite seu nome" required>
+                        </div>
+
+                        <div class="campo">
+                            <span>CPF:</span><br>
+                            <input id="cpf_input" type="number" placeholder="Digite seu CPF" required>
+                        </div>
+
+                        <div class="campo">
+                            <span>Estado:</span><br>
+                            <select id="estado_select" required>
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espirito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <span>Cidade:</span><br>
+                            <input id="cidade_input" type="text" placeholder="Digite sua cidade" required>
+                        </div>
+
+                        <div class="campo">
+                            <span>Número de celular:</span><br>
+                            <input id="num_input" type="number" placeholder="Digite o número o seu celular" required>
+                        </div>
+
+                        <div class="campo">
+                            <span>E-mail:</span><br>
+                            <input id="email_input" type="text" placeholder="Digite seu e-mail" required>
+                        </div>
+
+                        <div class="campo">
+                            <span>Senha:</span><br>
+                            <input id="senha_input" type="password" placeholder="Digite sua senha" required>
+                        </div>
+
+                        <div class="campo">
+                            <span>Confirmação da Senha:</span><br>
+                            <input id="confirmacao_senha_input" type="password" placeholder="Digite sua senha novamente"
+                                required>
+                        </div>
+
+                        <button class="button-cadastrar" onclick="cadastrar()">Cadastrar</button>
+                        <a href="./cadastro.html">Não tem uma conta?</a>
+
                     </div>
-
-                    <div class="campo">
-                        <span>CPF:</span><br>
-                        <input id="cpf_input" type="number" placeholder="Digite seu CPF">
-                    </div>
-
-                    <div class="campo">
-                        <span>Estado:</span><br>
-                        <input id="estado_input" type="text" placeholder="Digite seu estado">
-                    </div>
-
-                    <div class="campo">
-                        <span>Cidade:</span><br>
-                        <input id="cidade_input" type="text" placeholder="Digite sua cidade">
-                    </div>
-
-                    <div class="campo">
-                        <span>Número de celular:</span><br>
-                        <input id="num_input" type="number" placeholder="Digite o número o seu celular">
-                    </div>
-
-                    <div class="campo">
-                        <span>E-mail:</span><br>
-                        <input id="email_input" type="text" placeholder="Digite seu e-mail">
-                    </div>
-
-                    <div class="campo">
-                        <span>Senha:</span><br>
-                        <input id="senha_input" type="password" placeholder="Digite sua senha">
-                    </div>
-
-                    <div class="campo">
-                        <span>Confirmação da Senha:</span><br>
-                        <input id="confirmacao_senha_input" type="password" placeholder="Digite sua senha novamente">
-                    </div>
-
-                    <button class="button-cadastrar" onclick="cadastrar()">Cadastrar</button>
-                    <a href="./cadastro.html">Não tem uma conta?</a>
-
                 </div>
-            </div>
                 <!-- <div id="div_aguardar" class="loading-div">
                     <img src="./assets/circle-loading.gif" id="loading-gif">
                 </div> -->
@@ -156,7 +183,6 @@
                 <a class="footer-nav" href="simulador.html">CatBlog</a>
                 <a class="footer-nav" href="simulador.html">Simulação</a>
             </div>
-
         </div>
     </div>
 
@@ -167,17 +193,21 @@
 
 <script>
     function cadastrar() {
-        aguardar();
+        
+        // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
+        var cpfVar = Number(cpf_input.value);
+        var estadoVar = estado_select.value;
+        var cidadeVar = cidade_input.value;
+        var numVar = Number(num_input.value);
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
-        var cpfVar = Number(cpf_input.value);
 
-        if (nomeVar == "" || cpfVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || cpfVar == "" || estadoVar == "" || cidadeVar == "" || numVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
@@ -198,16 +228,19 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
+                cpfServer: cpfVar,
+                estadoServer: estadoVar,
+                cidadeServer: cidadeVar,
+                numServer: numVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar,
-                cpfServer: cpfVar
+                senhaServer: senhaVar
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
+                cardErro.style.color = "green";
 
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 

@@ -1,15 +1,16 @@
 -- Banco de dados do projeto CatLovers
 -- Desenvolvido por Simone Lopes dos Santos
 
+DROP DATABASE catlovers;
 CREATE DATABASE catlovers;
 USE catlovers;
 
 -- Tabela para cadastrar usuário
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	id INT PRIMARY KEY auto_increment,
 	nome VARCHAR(40),
     cpf CHAR(11),
-    estado VARCHAR(20),
+    estado CHAR(2),
     cidade VARCHAR(50),
 	telefoneCelular CHAR(11),
 	email VARCHAR(50),
@@ -18,31 +19,34 @@ CREATE TABLE usuario (
 
 -- Tabela para cadastrar gato
 CREATE TABLE gato(
-	idGato INT,
+	idGato INT PRIMARY KEY auto_increment,
 	nomeGato VARCHAR(20),
 	sexo VARCHAR(20),
 		constraint chkSexo check (sexo in ('macho', 'femea')),
 	idade VARCHAR(10),
-		constraint chkIdade check (idade in ('filhote', 'pré-adulto', 'adulto', 'idoso', 'não identificado')),
+		constraint chkIdade check (idade in ('filhote', 'pre-adulto', 'adulto', 'idoso', 'nao identificado')),
 	porte VARCHAR(20),
-		constraint chkPorte check (porte in ('pequeno', 'médio', 'grande', 'não identificado')),
+		constraint chkPorte check (porte in ('pequeno', 'medio', 'grande')),
 	vacina VARCHAR(10),
-		constraint chkVacina check (porte in ('sim', 'não', 'não sei')),
+		constraint chkVacina check (vacina in ('sim', 'nao', 'nao sei')),
 	castrado VARCHAR(10),
-		constraint chkCastrado check (porte in ('sim', 'não', 'não sei')),
+		constraint chkCastrado check (castrado in ('sim', 'nao', 'nao sei')),
 	pelagem VARCHAR(50),
-    tamanho DOUBLE,
-    peso DOUBLE,
+    tamanho FLOAT,
+    peso FLOAT,
 	historia VARCHAR(200),
-    caracteristicas VARCHAR(30),
-    publicado DATE,
-    pk_gatoAdotado INT,
-    CONSTRAINT PRIMARY KEY (pk_gatoAdotado, idGato),
-    fk_usuarioGato INT,
-    FOREIGN KEY (fk_usuarioGato) REFERENCES usuario(id)
+    linkFotos VARCHAR(200),
+    foto VARCHAR(50),
+	publicado datetime default current_timestamp,
+    
+    fk_cadastrado INT,
+    CONSTRAINT fk_cadastrado FOREIGN KEY (fk_cadastrado) REFERENCES usuario(id),
+    
+    fk_adotado INT,
+    CONSTRAINT fk_adotado FOREIGN KEY (fk_adotado) REFERENCES usuario(id)
 );
 
--- Tabela para comentários
+-- Tabela para comentários 
 CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
@@ -51,4 +55,16 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
-DROP DATABASE catlovers;
+
+INSERT INTO usuario values 
+	(null, 'Simone Lopes', '56485406808', 'SP', 'São Paulo', '11968023976', 'simone@gmail.com', '123456');
+
+INSERT INTO gato values 
+	(null, 'Lucy', 'femea', 'filhote', 'medio', 'sim', 'nao', 'Laranja', '0.20', '1.20', 'Lucy foi resgatada em uma venda ilegal de animais.', 'http://www.sisi.com', 'siames', default, 1, 1);
+    
+    select * from usuario;
+	select * from gato;
+    
+	select * from usuario join gato on  gato.fk_cadastrado = usuario.id;
+    
+    
