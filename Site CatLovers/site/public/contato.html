@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CatLovers | Página Inicial</title>
+  <title>CatLovers | Contato</title>
 
   <script src="./js/funcoes.js"></script>
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/contato.css">
 
   <link rel="icon" href="./assets/icon/favicon.png">
 
@@ -42,37 +42,79 @@
     </div>
   </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-    
-          <div class="footer-left">
-            <img src="./assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
+  <!-- Estrutura -->
+
+  <div class="contato">
+    <div class="container-contato">
+
+      <div class="cards">
+        
+
+        <!-- formulário -->
+        <div class="card-cadastro">
+          <h1>Entre em <span>contato</span> </h1>
+          <div class="formulario">
+           
+            <div class="dados">
+              <p><input id="ipt_nome" type="text" placeholder="Digite o seu nome"></p>
+              <p><input id="ipt_email" type="email" placeholder="Digite o seu e-mail"></p>
+              <p><textarea id="ipt_mensagem" cols="30" rows="10" placeholder="Digite a mensagem que será enviada."></textarea></p>
+              <button onclick="enviar()" class="button-enviar">ENVIAR</button>
+            </div>
+          </div> <br>
+
+          <div class="subtitulo">
+            <h4>Para dúvidas, sugestões, reclamações ou orçamento, entre em contato conosco.</h4>
           </div>
-    
-          <div class="footer-info">
-            <h1>Compania</h1>
-            <a class="footer-nav" href="index.html">Home</a>
-            <a class="footer-nav" href="sobreNos.html">Sobre Nós</a>
-            <a class="footer-nav" href="faleConosco.html">Fale Conosco</a>
-          </div>
-    
-          <div class="footer-info">
-            <h1>Usuário</h1>
-            <a class="footer-nav" href="login.html">Login</a>
-            <a class="footer-nav" href="cadastro.html">Cadastro</a>
-            <a class="footer-nav" href="cadastroGato.html">Cadastrar gato</a>
-          </div>
-    
-          <div class="footer-info">
-            <h1>Gatinhos</h1>
-            <a class="footer-nav" href="simulador.html">Adoção</a>
-            <a class="footer-nav" href="simulador.html">CatBlog</a>
-            <a class="footer-nav" href="simulador.html">Simulação</a>
-          </div>
-    
+
         </div>
+        <div class="card-imagem"></div>
       </div>
-    </body>
-    
-    </html>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+
+      <div class="footer-left">
+        <img src="./assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
+      </div>
+
+      <div class="footer-info">
+        <h1>Compania</h1>
+        <a class="footer-nav" href="index.html">Home</a>
+        <a class="footer-nav" href="sobreNos.html">Sobre Nós</a>
+        <a class="footer-nav" href="faleConosco.html">Fale Conosco</a>
+      </div>
+
+      <div class="footer-info">
+        <h1>Usuário</h1>
+        <a class="footer-nav" href="login.html">Login</a>
+        <a class="footer-nav" href="cadastro.html">Cadastro</a>
+        <a class="footer-nav" href="cadastroGato.html">Cadastrar gato</a>
+      </div>
+
+      <div class="footer-info">
+        <h1>Gatinhos</h1>
+        <a class="footer-nav" href="simulador.html">Adoção</a>
+        <a class="footer-nav" href="simulador.html">CatBlog</a>
+        <a class="footer-nav" href="simulador.html">Simulação</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  function enviar() {
+
+    var email = "simone.santos@sptech.school";
+    var assunto = `Olá, meu nome é ` + ipt_nome.value;
+    var corpo = ipt_mensagem.value;
+    window.open("mailto:" + email + "?subject=" + assunto + "&body=" + corpo);
+  }
+</script>

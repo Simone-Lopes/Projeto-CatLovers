@@ -1,0 +1,47 @@
+/* banner inicial sobre */
+.sobre{
+    background-image: url(../assets/imgs/gato-cinza-brincando.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 70vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sobre h1{
+    color: white;
+    font-size: 80px;
+    text-shadow: rgb(47, 47, 47) 0.1em 0.1em 0.2em;
+}
+/* parte de  textos */
+.sobre-container{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sobre-text{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sobre-text h1{
+    color: #393D46;
+    margin-top: 10%;
+}
+.sobre-text span{
+    color: #F3838D;
+}
+.sobre-text p{
+    color:#393D46;
+    text-align: justify;
+}
+.sobre-text img{
+    height: 30px;
+}

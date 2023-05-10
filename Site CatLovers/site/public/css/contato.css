@@ -1,0 +1,104 @@
+/* Estrutura do fundo */
+.contato {
+    background-color: #fffafa;
+    width: 100vw;
+    height: 90vh;
+}
+
+.container-contato {
+    width: 90%;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+/* Formulário */
+.cards{
+    box-shadow: 1px 1px 10px rgba(91, 91, 91, 0.77);
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    border-radius: 20px;
+    /* justify-content: center;
+    align-items: center;  */
+}
+.card-cadastro{
+    width: 100%;
+    height: 70vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-imagem{
+    width: 100%;
+    height: 70vh;
+    background-image: url(../assets/imgs/gato-branco-patinhas.jpg);
+    background-size: cover;
+    /* filter: brightness(50%); */
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.card-cadastro{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/* Campos de entrada */
+.formulario{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-cadastro span{
+    color: #393D46;
+}
+.card-cadastro span{
+    color: #F3838D;
+}
+.formulario input{
+    background-color: #f7f7f7;
+    width: 350px;
+    height: 28px;
+    border-radius: 5px;
+    border: 1px solid #cfcece;
+}
+.formulario textarea{
+    background-color: #f7f7f7;
+    width: 350px;
+    height: 100px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #cfcece;
+}
+::placeholder{
+    color: #979797;
+}
+
+.button-enviar{
+    background-color: #F3838D;
+    color: #ffffff;
+    font-size: 15px;
+    width: 354px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
+
+.subtitulo{
+    width: 80%;
+    height: auto;
+    text-align: center;
+}
+.subtitulo h4{
+    color: #979797;
+    font-weight: 200;
+}

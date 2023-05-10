@@ -2,67 +2,39 @@
 .cadastro {
     background-color: #FAEAEB;
     width: 100vw;
-    height: 150vh;
+    height: 135vh;
+    background-image: url(../assets/imgs/gatinho-cinza-com-parede-cinza.jpg);
+    background-size: cover;
 }
 
 .container-cadastro {
     width: 70%;
-    height: 150vh;
+    height: 135vh;
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
 } 
 
 /* Formulário */
 .cards{
     box-shadow: 1px 1px 10px rgba(91, 91, 91, 0.77);
-    width: 100vw;
+    width: 30vw;
     height: 120vh;
     display: flex;
     border-radius: 20px;
     /* justify-content: center;
     align-items: center;  */
 }
-.card-cadastro, .card-imagem{
+.card-cadastro{
     width: 100%;
     height: 120vh;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
+    border-radius: 20px;
 }
-.card-imagem{
-    background-image: url(../assets/imgs/gato-adotado-cadastro.jpg);
-    /* filter: brightness(50%); */
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-.card-cadastro{
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-.card-imagem h1{
-    color: white;
-    width: 80%;
-    text-align: end;
-    margin-right: 5%;
-    margin-top: 15%;
-    margin-bottom: 2%;
-    font-size: 60px;
-    opacity: 1.0;
-}
-.card-imagem p{
-    color: white;
-    width: 30%;
-    text-align: end;
-    margin-right: 5%;
-    margin-top: 0%;
-    font-size: 15px;
-}
+
 /* Imagem user */
 .icon-user {
     background-color: #F3838D;
