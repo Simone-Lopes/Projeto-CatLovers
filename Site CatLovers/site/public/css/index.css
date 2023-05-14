@@ -89,6 +89,7 @@
 
 .button-more:hover {
   background-color: #FFB8BC;
+  transition: 0.15s ease-in-out;
 }
 
 /* Cards de passo a passo */
@@ -148,6 +149,7 @@
 
 .card-cat:hover {
   margin-top: -135px;
+  transition: 0.15s ease-in-out;
 }
 
 .card-cat img {
@@ -187,6 +189,7 @@
 
 .button-acesse-aqui:hover {
   color: #FFB8BC;
+  transition: 0.15s ease-in-out;
 }
 
 /* Banner simulado */
