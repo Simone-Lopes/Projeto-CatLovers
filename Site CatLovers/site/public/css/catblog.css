@@ -1,0 +1,131 @@
+/* banner inicial */
+.banner-inicial {
+    width: 100vw;
+    height: 60vh;
+    background-image: url(../assets/imgs/mulher-segurando-seu-adoravel-gatinho-em-casa.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-inicial h1 {
+    font-size: 50px;
+    color: white;
+    text-shadow: 1px 1px 8px #3b3b3b;
+}
+
+/* Conteudo do catblog */
+.conteudo {
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    background-color: #fffafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-catblog {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+
+.titulo h2 {
+    color: #7b7d81;
+    margin-top: 5%;
+}
+
+/* artigos */
+.artigos {
+    width: 90%;
+    height: 50vh;
+    background-color: #fffafa;
+    display: flex;
+    justify-content: space-between;    
+    border-bottom: 1px solid #FFB8BC;
+}
+
+.card-artigo {
+    width: 18vw;
+    height: 42vh;
+    border-right: 1px solid #FFB8BC;
+}
+
+.card-artigo img {
+    width: 15vw;
+    height: 22vh;
+    border-radius: 10px;
+}
+
+.card-artigo p {
+    color: #393D46;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 0%;
+}
+.card-artigo h3 {
+    color: #393D46;
+    text-decoration: underline;
+    width: 90%;
+}
+    
+.artigos a{
+    text-decoration: none;
+}
+/* banner simulado */
+.banner-simulado {
+    width: 100vw;
+    height: 70vh;
+    background-image: url(../assets/imgs/gatinho-fundo-azul.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .banner-text {
+    width: 23%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    margin-left: 10%;
+  }
+  
+  .banner-text h1 {
+    color: #ffffff;
+    text-shadow: rgb(47, 47, 47) 0.1em 0.1em 0.2em;
+    font-size: 60px;
+    text-transform: uppercase;
+    margin: 0%;
+  }
+  
+  .banner-text p {
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-shadow: rgb(47, 47, 47) 0.1em 0.1em 0.2em;
+  }
+  
+  .banner-text span {
+    color: #F3838D;
+  }
+  .button-more {
+    width: 12vw;
+    height: 7vh;
+    background-color: #F3838D;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  .button-more:hover {
+    background-color: #FFB8BC;
+    transition: 0.15s ease-in-out;
+  }
