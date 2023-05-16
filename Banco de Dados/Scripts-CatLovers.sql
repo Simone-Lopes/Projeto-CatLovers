@@ -2,6 +2,7 @@
 -- Desenvolvido por Simone Lopes dos Santos
 
 DROP DATABASE catlovers;
+
 CREATE DATABASE catlovers;
 USE catlovers;
 
