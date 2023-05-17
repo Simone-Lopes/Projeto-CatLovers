@@ -185,12 +185,13 @@ body{
     height: auto;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: center; 
+    margin-top: 10%;
 }
 
 .icon-social img {
     height: 5vh;
-    margin-top: 20%;
+   
 }
 /* cards dos meus gatos */
 .meus-pets{
