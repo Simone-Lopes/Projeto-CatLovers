@@ -61,13 +61,13 @@
                 </div>
 
                 <h2>Bem-vindo de volta!</h2>
-                
+
                 <div class="formulario">
                     <div class="campo">
                         <span>E-mail:</span><br>
-                        <input id="email_input" type="text" placeholder="Digite seu e-mail"><br>
+                        <input id="email_input" type="text" placeholder="Digite seu e-mail" required><br>
                         <span>Senha:</span><br>
-                        <input id="senha_input" type="text" placeholder="Digite sua senha">
+                        <input id="senha_input" type="password" placeholder="Digite sua senha" required>
                     </div>
                     <button class="button-entrar" onclick="entrar()">Entrar</button>
                     <a href="./cadastro.html">Não tem uma conta?</a>
@@ -164,7 +164,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./index.html";
+                        window.location = 'usuario/catblog.html';
                     }, 1000); // apenas para exibir o loading
 
                 });

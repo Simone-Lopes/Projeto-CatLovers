@@ -1,0 +1,109 @@
+/* Banner do fundo */
+.cadastroGato {
+    background-color: #FAEAEB;
+    width: 100vw;
+    height: 220vh;
+    display: flex;
+    align-items: center;
+}
+
+.container-cadastro {
+    width: 70%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+/* Formulário */
+
+.card-cadastroGato{
+    width: 60%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    border-radius: 20px;
+}
+
+/* Imagem user */
+.icon-user {
+    background-color: #F3838D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 200px;
+    width: 100px;
+    height: 100px;
+    margin-top: 5%;
+}
+
+.icon-user img {
+    width: 60px;
+    height: 60px;
+}
+
+.card-cadastro h2{
+    color: #393D46;
+}
+/* Campos de entrada */
+.formulario{
+    width: 60%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario span{
+    color: #979797;
+}
+.formulario input{
+    background-color: #f7f7f7;
+    width: 300px;
+    height: 28px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #cfcece;
+}
+.formulario select{
+    background-color: #f7f7f7;
+    width: 308px;
+    height: 34px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #cfcece;
+}
+::placeholder{
+    color: #979797;
+}
+select:invalid {
+    color: #979797;
+  }
+textarea{
+    background-color: #f7f7f7;
+    width: 300px;
+    height: 100px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #cfcece;
+}
+.formulario a{
+    text-decoration: none;
+    color: #b9b9b9;
+    border-bottom:1px solid #b9b9b9;
+    font-size: 15px;
+}
+.button-cadastrar{
+    background-color: #F3838D;
+    color: #ffffff;
+    font-size: 15px;
+    width: 305px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+}
