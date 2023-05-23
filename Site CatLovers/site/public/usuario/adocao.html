@@ -8,9 +8,9 @@
 
   <title>CatLovers | Adote!</title>
 
-  <script src="./js/funcoes.js"></script>
+  <script src="../js/funcoes.js"></script>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/adocao.css">
 
   <link rel="icon" href="../assets/icon/favicon.png">
 
@@ -42,37 +42,118 @@
     </div>
   </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-    
-          <div class="footer-left">
-            <img src="../assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
-          </div>
-    
-          <div class="footer-info">
-            <h1>Compania</h1>
-            <a class="footer-nav" href="../index.html">Home</a>
-            <a class="footer-nav" href="../sobreNos.html">Sobre Nós</a>
-            <a class="footer-nav" href="../faleConosco.html">Fale Conosco</a>
-          </div>
-    
-          <div class="footer-info">
-            <h1>Usuário</h1>
-            <a class="footer-nav" href="../login.html">Login</a>
-            <a class="footer-nav" href="../cadastro.html">Cadastro</a>
-            <a class="footer-nav" href="./cadastroGato.html">Cadastrar gato</a>
-          </div>
-    
-          <div class="footer-info">
-            <h1>Gatinhos</h1>
-            <a class="footer-nav" href="./adocao.html">Adoção</a>
-            <a class="footer-nav" href="./catblog.html">CatBlog</a>
-            <a class="footer-nav" href="./simulador.html">Simulação</a>
-          </div>
-    
-        </div>
+  <!-- Banner de adoção -->
+  <div class="banner-adote">
+    <div class="titulo-banner">
+      <h1> <span class="nome-usuario" id="b_usuario">Usuario,</span> adote nossos gatinhos!</h1>
+    </div>
+  </div>
+
+  <!-- div do gato -->
+  <div class="gato" id="div_listaGato">
+    <P class="p_subtitulo">Gatos a procura de um lar...</P>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+
+      <div class="footer-left">
+        <img src="../assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
       </div>
-    </body>
-    
-    </html>
+
+      <div class="footer-info">
+        <h1>Compania</h1>
+        <a class="footer-nav" href="../index.html">Home</a>
+        <a class="footer-nav" href="../sobreNos.html">Sobre Nós</a>
+        <a class="footer-nav" href="../faleConosco.html">Fale Conosco</a>
+      </div>
+
+      <div class="footer-info">
+        <h1>Usuário</h1>
+        <a class="footer-nav" href="../login.html">Login</a>
+        <a class="footer-nav" href="../cadastro.html">Cadastro</a>
+        <a class="footer-nav" href="./cadastroGato.html">Cadastrar gato</a>
+      </div>
+
+      <div class="footer-info">
+        <h1>Gatinhos</h1>
+        <a class="footer-nav" href="./adocao.html">Adoção</a>
+        <a class="footer-nav" href="./catblog.html">CatBlog</a>
+        <a class="footer-nav" href="./simulador.html">Simulação</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+  //Aqui chamamos o arquivo listar vindo da gatoModel
+  fetch("../gatos/listar", {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then((resposta) => {
+    console.log(resposta);
+    return resposta.json();
+
+  }).then((data) => {
+    console.log(data);
+
+    //Puxamos a quantidade de registros no BD
+    for (var i = 0; i < data.length; i++) {
+      const element = data[i];
+      div_listaGato.innerHTML += `
+    <div class="container">
+
+      <div class="card-gato">
+          <img src="../assets/imgs/gato-recebendo-carinho.jpg" alt="">
+
+            <div class="content">
+
+               <div class="titulo">
+                  <h1>${element.nomeGato}</h1>
+                </div>
+
+               <div class="informacao">
+                  <div class="info-1">
+                    <span><b>Idade:</b> ${element.idade}</span><br>
+                    <span><b>Sexo:</b> ${element.sexo}</span><br>
+                    <span><b>Porte:</b> ${element.porte}</span><br>
+                    <span><b>Pelagem:</b> ${element.pelagem}</span><br>
+                    <span><b>Local:</b> ${element.estado} - ${element.cidade}</span><br>
+                  </div>
+
+                  <div class="info-2">
+                    <span><b>Vacinado:</b> ${element.vacina}</span><br>
+                    <span><b>Castrado:</b> ${element.castrado}</span><br>
+                    <span><b>Tamanho:</b> ${element.tamanho} cm</span><br>
+                    <span><b>Peso:</b> ${element.peso} kg</span><br>
+                    <span><b>Mais fotos: <a href="${element.linkFotos}"> Aqui</a></b></span><br>
+                  </div>
+
+                </div>
+                <div class="info-3">
+                  <span><b>História:</b> ${element.historia}</span><br><br>
+                   <span><b>Data:</b> ${element.publicado}</span><br>
+                  
+                </div>
+                <div class="info-4">
+                  <span><b>Entre em contato com:</b> ${element.nome}</span><br>
+                   <span><b>Número:</b> ${element.telefoneCelular}</span><br>
+                </div>
+                <button class="button_adotar" >Adotar!</button>
+               </div>
+            </div>
+          </div>
+          `;
+    }
+  })
+
+
+</script>

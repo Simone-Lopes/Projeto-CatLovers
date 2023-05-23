@@ -61,6 +61,7 @@ function entrar(req, res) {
 }
 
 function cadastrarGato(req, res) {
+    console.log("Aqui começa o controlller");
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nomeGato = req.body.nomeGatoServer;
     var sexo = req.body.sexoServer;
@@ -116,9 +117,12 @@ function cadastrarGato(req, res) {
     } else if (confirmarEmail == undefined) {
         res.status(400).send("O seu email está undefined!");
     } else {
+
+        console.log("Antes do Model");
+        gatoModel.testar()
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        GatoModel.cadastrarGato(nomeGato, sexo, idade, porte, vacina, castrado, pelagem, tamanho, peso, historia, link, imagem, confirmarEmail)
+        gatoModel.cadastrarGato(nomeGato, sexo, idade, porte, vacina, castrado, pelagem, tamanho, peso, historia, link, imagem, confirmarEmail)
             .then(
                 function (resultado) {
                     res.json(resultado);

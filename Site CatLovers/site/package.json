@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon --exec node app.js"
+    "dev": "node --exec node app.js"
   },
   "author": "Feito pelos desenvolvedores @ São Paulo Tech School / Bandtec Digital School",
   "license": "MIT",

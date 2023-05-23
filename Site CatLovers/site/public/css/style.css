@@ -18,6 +18,7 @@ body {
 .header {
   width: 100vw;
   background: #FFB8BC;
+  position: fixed;
 }
 
 .logo {

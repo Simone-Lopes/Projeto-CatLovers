@@ -44,174 +44,196 @@
 
   <!-- iniciando tela -->
   <div class="cadastroGato">
-    <!-- mensagem de erro -->
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
-      </div>
-    </div>
-
     <div class="container-cadastro">
 
-        <!-- 
+      <!-- 
                 <div class="card-imagem">
                 </div> -->
 
-        <!-- formulário -->
-        <div class="card-cadastroGato">
-          <div class="icon-user">
-            <img src="../assets/imgs/icon-usuario.png" alt="icone do usuário">
+      <!-- formulário -->
+      <div class="card-cadastroGato">
+
+        <div class="formulario">
+          <h2>CatLovers!</h2>
+          <p>Para cadastrar o gatinho, coloque as seguintes informações...</p>
+          <div class="campo">
+            <span>Nome do gato:</span><br>
+            <input id="input_nomeGato" type="text" placeholder="Digite o nome do gato">
           </div>
 
-          <h2>Torne-se um CatLover!</h2>
-          <div class="formulario">
-
-            <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-
-            <div class="campo">
-              <span>Nome do gato:</span><br>
-              <input id="input_nomeGato" type="text" placeholder="Digite o nome do gato">
-            </div>
-
-            <div class="campo">
-              <span>Sexo:</span><br>
-                <select id="input_sexo">
-                    <option value="" disabled selected>Selecione...</option>
-                    <option value="macho">Macho</option>
-                    <option value="femea">Fêmea</option>
-                </select>
-            </div>
-
-            <div class="campo">
-              <span>Idade:</span><br>
-              <select id="input_idade">
-                <option value="" disabled selected>Selecione...</option>
-                <option value="filhote">Filhote</option>
-                <option value="jovem">Jovem</option>
-                <option value="adulto">Adulto</option>
-                <option value="idoso">Idoso</option>
-                <option value="nao-identificado">Não identificado</option>
+          <div class="campo">
+            <span>Sexo:</span><br>
+            <select id="input_sexo">
+              <option value="" disabled selected>Selecione...</option>
+              <option value="Macho">Macho</option>
+              <option value="Fêmea">Fêmea</option>
             </select>
-            </div>
+          </div>
 
-            <div class="campo">
-              <span>Porte:</span><br>
-              <select id="input_porte">
-                <option value="" disabled selected>Selecione...</option>
-                <option value="pequeno">Pequeno</option>
-                <option value="medio">Médio</option>
-                <option value="grande">Grande</option>
+          <div class="campo">
+            <span>Idade:</span><br>
+            <select id="input_idade">
+              <option value="" disabled selected>Selecione...</option>
+              <option value="Filhote">Filhote</option>
+              <option value="Jovem">Jovem</option>
+              <option value="Adulto">Adulto</option>
+              <option value="Idoso">Idoso</option>
+              <option value="Não identificado">Não identificado</option>
             </select>
-            </div>
+          </div>
 
-            <div class="campo">
-              <span>Vacina:</span><br>
-              <select id="input_vacina">
-                <option value="" disabled selected>Selecione...</option>
-                <option value="sim">Sim</option>
-                <option value="nao">Não</option>
-                <option value="nao-sei">Não sei</option>
+          <div class="campo">
+            <span>Porte:</span><br>
+            <select id="input_porte">
+              <option value="" disabled selected>Selecione...</option>
+              <option value="Pequeno">Pequeno</option>
+              <option value="Médio">Médio</option>
+              <option value="Grande">Grande</option>
             </select>
-            </div>
+          </div>
 
-            <div class="campo">
-              <span>Castrado:</span><br>
-              <select id="input_castrado">
-                <option value="" disabled selected>Selecione...</option>
-                <option value="sim">Sim</option>
-                <option value="nao">Não</option>
-                <option value="nao-sei">Não sei</option>
+          <div class="campo">
+            <span>Pelagem:</span><br>
+            <textarea id="input_pelagem" placeholder="Descreva o pelo do gato" required></textarea>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Segunda parte do formulário -->
+      <!-- formulário -->
+      <div class="card-cadastroGato">
+        <div class="formulario">
+          <h2>Saúde</h2>
+          <p>Informe as condições de saúde do gato...</p>
+
+          <div class="campo">
+            <span>Vacina:</span><br>
+            <select id="input_vacina">
+              <option value="" disabled selected>Selecione...</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+              <option value="Não sei">Não sei</option>
             </select>
-            </div>
+          </div>
 
-            <div class="campo">
-              <span>Pelagem:</span><br>
-              <textarea id="input_pelagem" placeholder="Descreva a pelagem do gato" required></textarea>
-            </div>
-
-            <div class="campo">
-              <span>Tamanho:</span><br>
-              <input type="number" id="input_tamanho" placeholder="Digite o tamanho do gato" required>
-            </div>
-
-            <div class="campo">
-              <span>Peso:</span><br>
-              <input type="number" id="input_peso" placeholder="Digite o peso do gato" required>
-            </div>
-
-            <div class="campo">
-              <span>História:</span><br>
-              <textarea id="input_historia" placeholder="Conte a história do gatinho" required></textarea>
-            </div>
-
-            <div class="campo">
-              <span>Link de fotos:</span><br>
-              <input type="link" id="input_link" placeholder="Insira um link com fotos e vídeos do pet" required>
-            </div>
-
-            <div class="campo">
-              <span>Imagem:</span><br>
-              <select id="input_porte">
-                <option value="" disabled selected>Selecione...</option>
-                <option value="pequeno">Pequeno</option>
+          <div class="campo">
+            <span>Castrado:</span><br>
+            <select id="input_castrado">
+              <option value="" disabled selected>Selecione...</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+              <option value="Não sei">Não sei</option>
             </select>
-              <br><img src="../assets/imgs/foto-Mel.jpg" alt="" style="height: 100px;">
-            </div>
+          </div>
 
-            <div class="campo">
-              <span>Confirmação de email:</span><br>
-              <input id="input_confirmarEmail" type="email" placeholder="Confirme seu email" required>
-            </div>
+          <div class="campo">
+            <span>Tamanho:</span><br>
+            <input type="number" id="input_tamanho" placeholder="Digite o tamanho do gato. ex: 0.20" required>
+          </div>
 
-            <button class="button-cadastrar" onclick="cadastrar()">Cadastrar Gato</button>
-            <a href="./cadastro.html">Quer adotar um gatinho?</a>
-            
-            <div id="div_aguardar" class="loading-div">
-                    <!-- <img src="../assets/circle-loading.gif" id="loading-gif"> -->
-                </div>
+          <div class="campo">
+            <span>Peso:</span><br>
+            <input type="number" id="input_peso" placeholder="Digite o peso do gato. ex: 2.200" required>
+          </div>
 
+        </div>
+      </div>
+
+      <!-- Terceiraparte do formulário -->
+      <!-- formulário -->
+      <div class="card-cadastroGato">
+        <div class="formulario">
+          <h2>Características</h2>
+          <p>Informe as características do seu gato para impressionar os futuros papais...</p>
+
+          <div class="campo">
+            <span>História:</span><br>
+            <textarea id="input_historia" placeholder="Conte a história do gatinho. DICA: Escreva de forma emocionante!"
+              required></textarea>
+          </div>
+
+          <div class="campo">
+            <span>Link de fotos:</span><br>
+            <input type="link" id="input_link" placeholder="Insira um link com fotos do pet (OPCIONAL)" required>
+          </div>
+
+          <div class="campo">
+            <span>Selecione a que mais se parece com o pet:</span><br>
+            <select id="input_imagem">
+              <option value="" disabled selected>Selecione...</option>
+              <option value="laranja">Laranja</option>
+            </select>
+            <br><img src="../assets/imgs/foto-Mel.jpg" alt="" style="height: 100px;">
           </div>
         </div>
-        
-
-        <div id="div_erros_login"></div>
-      </div>
-    </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <div class="container">
-
-      <div class="footer-left">
-        <img src="../assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
       </div>
 
-      <div class="footer-info">
-        <h1>Compania</h1>
-        <a class="footer-nav" href="index.html">Home</a>
-        <a class="footer-nav" href="sobreNos.html">Sobre Nós</a>
-        <a class="footer-nav" href="faleConosco.html">Fale Conosco</a>
-      </div>
+      <!-- Quarta parte do formulário -->
+      <!-- formulário -->
+      <div class="card-cadastroGato">
+        <div class="formulario">
+          <h2>Finalizando</h2>
+          <p>Fique tranquilo! A confirmação de email é para garantir a segurança do gatinho e do registro</p>
 
-      <div class="footer-info">
-        <h1>Usuário</h1>
-        <a class="footer-nav" href="login.html">Login</a>
-        <a class="footer-nav" href="cadastro.html">Cadastro</a>
-        <a class="footer-nav" href="cadastroGato.html">Cadastrar gato</a>
-      </div>
+          <div class="campo">
+            <span>Confirme seu email:</span><br>
+            <input id="input_confirmarEmail" type="email" placeholder="Insira seu email" required>
+          </div>
 
-      <div class="footer-info">
-        <h1>Gatinhos</h1>
-        <a class="footer-nav" href="simulador.html">Adoção</a>
-        <a class="footer-nav" href="simulador.html">CatBlog</a>
-        <a class="footer-nav" href="simulador.html">Simulação</a>
-      </div>
+          <button class="button-cadastrar" onclick="cadastrar()">Cadastrar Gato</button>
+          <a href="./cadastro.html">Quer adotar um gatinho?</a>
 
+          <!-- mensagem de erro -->
+          <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+              <span id="mensagem_erro"></span>
+            </div>
+          </div>
+
+          <div id="div_aguardar" class="loading-div">
+            <!-- <img src="../assets/circle-loading.gif" id="loading-gif"> -->
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
+
+
+
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="container">
+
+          <div class="footer-left">
+            <img src="../assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
+          </div>
+
+          <div class="footer-info">
+            <h1>Compania</h1>
+            <a class="footer-nav" href="index.html">Home</a>
+            <a class="footer-nav" href="sobreNos.html">Sobre Nós</a>
+            <a class="footer-nav" href="faleConosco.html">Fale Conosco</a>
+          </div>
+
+          <div class="footer-info">
+            <h1>Usuário</h1>
+            <a class="footer-nav" href="login.html">Login</a>
+            <a class="footer-nav" href="cadastro.html">Cadastro</a>
+            <a class="footer-nav" href="cadastroGato.html">Cadastrar gato</a>
+          </div>
+
+          <div class="footer-info">
+            <h1>Gatinhos</h1>
+            <a class="footer-nav" href="simulador.html">Adoção</a>
+            <a class="footer-nav" href="simulador.html">CatBlog</a>
+            <a class="footer-nav" href="simulador.html">Simulação</a>
+          </div>
+
+        </div>
+      </div>
 </body>
 
 </html>
@@ -236,23 +258,23 @@
     var linkVar = input_link.value;
     var imagemVar = input_imagem.value;
     var confirmarEmailVar = input_confirmarEmail.value;
-    
 
-    if (nomeGatoVar == "" || sexoVar == "" || idadeVar == "" || porteVar == "" || vacinaVar == "" || 
-        castradoVar == "" || pelagemVar == "" || tamanhoVar == "" || pesoVar == "" || historiaVar == "" || 
-        linkVar == "" || imagemVar == "" || confirmarEmailVar == "") {
+
+    if (nomeGatoVar == "" || sexoVar == "" || idadeVar == "" || porteVar == "" || vacinaVar == "" ||
+      castradoVar == "" || pelagemVar == "" || tamanhoVar == "" || pesoVar == "" || historiaVar == "" ||
+      linkVar == "" || imagemVar == "" || confirmarEmailVar == "") {
       cardErro.style.display = "block"
-      mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+      //  mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
       finalizarAguardar();
-      return false;
+      //  return false;
     }
     else {
       setInterval(sumirMensagem, 5000)
     }
 
     // Enviando o valor da nova input
-    fetch("/gatos/cadastrarGato", {
+    fetch("../gatos/cadastrarGato", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

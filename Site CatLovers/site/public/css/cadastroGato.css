@@ -2,9 +2,11 @@
 .cadastroGato {
     background-color: #FAEAEB;
     width: 100vw;
-    height: 220vh;
+    height: 250vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    background-image: linear-gradient(#FAEAEB, #FFB8BC);
 }
 
 .container-cadastro {
@@ -13,11 +15,11 @@
     margin: auto;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
 } 
 
 /* Formulário */
-
 .card-cadastroGato{
     width: 60%;
     height: auto;
@@ -26,28 +28,21 @@
     flex-direction: column;
     align-items: center;    
     border-radius: 20px;
+    margin-top: 10px;
+    box-shadow: 1px 1px 8px #979797;
+}
+.card-cadastroGato h2{
+    color: #F3838D;
+    margin-bottom: 0%;
+}
+.card-cadastroGato p{
+    color:#979797;
+    margin-bottom: 8%;
+    margin-top: 2%;
+    font-size: 15px;
+    text-align: center;
 }
 
-/* Imagem user */
-.icon-user {
-    background-color: #F3838D;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 200px;
-    width: 100px;
-    height: 100px;
-    margin-top: 5%;
-}
-
-.icon-user img {
-    width: 60px;
-    height: 60px;
-}
-
-.card-cadastro h2{
-    color: #393D46;
-}
 /* Campos de entrada */
 .formulario{
     width: 60%;
@@ -83,6 +78,10 @@
 select:invalid {
     color: #979797;
   }
+
+select {
+    color: #979797;
+  }
 textarea{
     background-color: #f7f7f7;
     width: 300px;
@@ -96,6 +95,7 @@ textarea{
     color: #b9b9b9;
     border-bottom:1px solid #b9b9b9;
     font-size: 15px;
+    margin-bottom: 20px;
 }
 .button-cadastrar{
     background-color: #F3838D;

@@ -23,14 +23,15 @@ CREATE TABLE gato(
 	idGato INT PRIMARY KEY auto_increment,
 	nomeGato VARCHAR(20),
 	sexo VARCHAR(20),
+		constraint chkSexo check (sexo in ('Macho', 'Fêmea')),
 	idade VARCHAR(10),
-
+		constraint chkIdade check (idade in ('Filhote', 'Jovem', 'Adulto', 'Idoso', 'Não identificado')),
 	porte VARCHAR(20),
-
+		constraint chkPorte check (porte in ('Pequeno', 'Médio', 'Grande')),
 	vacina VARCHAR(10),
-
+		constraint chkVacina check (vacina in ('Sim', 'Não', 'Não sei')),
 	castrado VARCHAR(10),
-
+		constraint chkCastrado check (castrado in ('Sim', 'Não', 'Não sei')),
 	pelagem VARCHAR(50),
     tamanho FLOAT,
     peso FLOAT,
@@ -60,14 +61,14 @@ INSERT INTO usuario values
 	('Simone Lopes', '56485406808', 'SP', 'São Paulo', '11968023976', 'simone@gmail.com', '123456');
 
 INSERT INTO gato values 
-	(null, 'Lucy', 'femea', 'filhote', 'medio', 'sim', 'nao', 'Laranja', '0.20', '1.20', 'Lucy foi resgatada em uma venda ilegal de animais.', 'http://www.sisi.com', 'siames', now(), 'simone@gmail.com', null);
+	(null, 'Lucy teste', 'Fêmea', 'Filhote', 'Médio', 'Sim', 'Não', 'Laranja', '0.20', '1.20', 'Lucy foi resgatada por uma ONG, pois foi encontrada em uma venda ilegal de animais. Ajude Lucy a achar uma familia em que possa encher de amor!', 'http://www.sisi.com', 'siames', now(), 'simone@gmail.com', null);
     
     select * from usuario;
 	select * from gato;
     
-INSERT INTO gato (nomeGato, sexo, idade, porte, vacina, castrado, pelagem, tamanho, peso, historia, linkFotos, fotos, fk_cadastrado) VALUES ('${nomeGato}', 'femea', 'filhote', 'pequeno','sim', 'sim', '${pelagem}', 10, 55, '${historia}', '${link}','${fotos}','simone@gmail.com');
+	select * from usuario join gato on gato.fk_cadastrado = usuario.email;
     
-	select * from usuario join gato on  gato.fk_cadastrado = usuario.email;
+    truncate table gato;
 
     
     

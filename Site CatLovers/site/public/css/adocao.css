@@ -1,0 +1,114 @@
+body {
+    background-color: #fffafa;
+}
+/* Banner Adote */
+.banner-adote {
+    width: 100vw;
+    height: 70vh;
+    background-image: url(../assets/imgs/gatinho-fundo-azul.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5%;
+  }
+
+  .titulo-banner{
+    width: 30%;
+    color: #ffffff;
+    font-size: 30px;
+    text-shadow: 1px 1px 5px #a9a9a9;
+    margin-left: 15%;
+  }
+  .nome-usuario{
+    color:#F3838D;
+  }
+
+  /* Iniciando tratamendo de dados vindos do select */
+.gato {
+    width: 100vw;
+    height: auto;
+}
+.p_subtitulo{
+    color: #a9a9a9;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 12%;
+}
+
+.container {
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-gato {
+    width: 80%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 8px #696969;
+    border-radius: 15px;
+    padding: 2%;
+    margin: 2%;
+}
+
+.card-gato img {
+    width: 52%;
+    height: 100%;
+    border-radius: 15px;
+    margin-right: 5%;
+}
+
+.informacao {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-1,
+.info-2 {
+    margin-bottom: 5%;
+}
+
+.info-3 {
+    width: 90%;
+}
+
+.card-gato h1 {
+    color: #F3838D;
+    font-size: 50px;
+    margin-top: 0%;
+}
+
+.card-gato b {
+    font-weight: 600;
+    color: #393D46;
+}
+
+.card-gato span {
+    color: #393D46;
+    width: 100%;
+    height: auto;
+}
+
+.button_adotar {
+    width: 12vw;
+    height: 7vh;
+    background-color: #F3838D;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-top: 20px;
+}
+
+.button_adotar:hover {
+    background-color: #FFB8BC;
+    transition: 0.15s ease-in-out;
+}
+.content{
+    width: 90%;
+}

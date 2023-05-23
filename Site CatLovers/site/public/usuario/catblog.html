@@ -8,7 +8,7 @@
 
   <title>CatLovers | CatBlog</title>
 
-  <script src="./js/funcoes.js"></script>
+  <script src="../js/funcoes.js"></script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/catblog.css">
 
@@ -49,6 +49,14 @@
 
   <!-- Iniciando conteúdo -->
   <div class="conteudo">
+
+    <div class="usuario">
+      <img src="../assets/imgs/icons8-usuário-50.png" alt="">
+      <div class="conteudo-usuario">
+        <h2 id="b_usuario"> Bem vindo(a)!</h2>
+        <p id="b_email"></p>
+      </div>
+    </div>
 
     <div class="container-catblog">
       <div class="titulo">
@@ -96,15 +104,6 @@
     <div class="container-catblog">
       <div class="titulo">
         <h2>Conheça...</h2>
-      </div>
-    </div>
-
-    <div class="conheca">
-      <div class="container-conheca">
-        <img src="../assets/imgs/gato01.png" alt="">
-        <img id="gato02" src="../assets/imgs/gato02.png" alt="">
-        <img src="../assets/imgs/gato03.png" alt="">
-        <img src="../assets/imgs/gato04.png" alt="">
       </div>
     </div>
 
@@ -166,3 +165,8 @@
 </body>
 
 </html>
+
+<script>
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
+</script>

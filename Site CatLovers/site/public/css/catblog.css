@@ -39,6 +39,33 @@
   margin-top: 5%;
 }
 
+/* usuario */
+.usuario{
+  width: 90%;
+  height: 6vh;
+  margin-top: 5%;
+  display: flex;
+  justify-content: baseline;
+}
+.usuario h2{
+  color: #393D46;
+  margin: 0%;
+}
+.usuario p{
+  color: #7b7d81;
+  margin: 0%;
+}
+.usuario img{
+  height: 50PX;
+  width: 4%;
+  margin-right: 5px;
+}
+.conteudo-usuario{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
 /* artigos */
 .artigos {
   width: 90%;
