@@ -31,6 +31,7 @@
           <li class="pagina"><a href="catblog.html">CatBlog</a></li>
           <li class="paginas"><a href="adocao.html">Adoção</a></li>
           <li class="paginas"><a href="simulador.html">Simulador</a></li>
+          <li class="paginas"><a href="../dashboard/dashboard.html">Dashboard</a></li>
         </ul>
         <ul class="navbar2">
           <li class="agora"><a href="cadastroGato.html">Cadastrar Gato</a></li>
@@ -46,12 +47,48 @@
   <div class="cadastroGato">
     <div class="container-cadastro">
 
-      <!-- 
-                <div class="card-imagem">
-                </div> -->
+      <!-- Capa do titulo -->
+      <div id="card_cadastroGato_titulo">
+        <div class="banner-text">
+          <h1>Ajude um <br><span>gatinho</span></h1>
+          <p>Cadastre um gatinho e o<br> ajude a encontrar uma familia!</p>
+          <a href='#'><button onclick="iniciar()" class="button-more">Iniciar</button></a>
+        </div>
+      </div>
+
+      <!-- Capa de regras-->
+      <div id="card_cadastroGato_regras">
+        <h1>Nossas <span>regras</span></h1>
+        <p>Siga nossas regras de ética dos CatLovers!</p><br><br>
+        <div class="bloco-regras">
+          <div class="regras">
+
+            <div class="coluna">
+              <img src="../assets/imgs/icon-alerta.png" alt="">
+              <p>Não apoiamos a reprodução ilegal de animais. Logo, os pets cadastrados aqui devem ser resgatados pelo
+                doador.</p>
+            </div>
+
+            <div class="coluna">
+              <img src="../assets/imgs/icon-cofrinho.png" alt="">
+              <p>Nosso sistema não faz doação de valores entre os usuários. Logo, qualquer doação financeira é de
+                responsabilidade do doador.</p>
+            </div>
+
+            <div class="coluna">
+              <img src="../assets/imgs/icon-veterinario.png" alt="">
+              <p>É necessário informar no cadastro a condição de saúde do gatinho. Coloque informações verídicas, nem
+                todos tem condição de adotar um pet doente.</p>
+            </div>
+            <a href='#'><button onclick="regras()" class="button-more">Cadastrar Gato</button></a>
+          </div>
+
+          <div class="imagem-regras"></div>
+        </div>
+      </div>
 
       <!-- formulário -->
-      <div class="card-cadastroGato">
+      <div id="card_cadastroGato1" class="card-cadastroGato">
 
         <div class="formulario">
           <h2>CatLovers!</h2>
@@ -102,7 +139,7 @@
 
       <!-- Segunda parte do formulário -->
       <!-- formulário -->
-      <div class="card-cadastroGato">
+      <div id="card_cadastroGato2" class="card-cadastroGato">
         <div class="formulario">
           <h2>Saúde</h2>
           <p>Informe as condições de saúde do gato...</p>
@@ -140,9 +177,9 @@
         </div>
       </div>
 
-      <!-- Terceiraparte do formulário -->
+      <!-- Terceira parte do formulário -->
       <!-- formulário -->
-      <div class="card-cadastroGato">
+      <div id="card_cadastroGato3" class="card-cadastroGato">
         <div class="formulario">
           <h2>Características</h2>
           <p>Informe as características do seu gato para impressionar os futuros papais...</p>
@@ -162,19 +199,44 @@
             <span>Selecione a que mais se parece com o pet:</span><br>
             <select id="input_imagem">
               <option value="" disabled selected>Selecione...</option>
-              <option value="laranja">Laranja</option>
+              <option value="laranja.jpg">1. Laranja</option>
+              <option value="branco.jpg">2. Branco</option>
+              <option value="preto.jpg">3. Preto</option>
+              <option value="cinza.jpg">4. Cinza</option>
+              <option value="siames.jpg">5. Siamês</option>
+              <option value="rajado.jpg">6. Rajado</option>
+              <option value="preto-e-branco.jpg">7. Preto e Branco</option>
+              <option value="rajado-e-branco.jpg">8. Rajado e Branco</option>
+              <option value="rajado-e-preto.jpg">9. Rajado e Preto</option>
             </select>
-            <br><img src="../assets/imgs/foto-Mel.jpg" alt="" style="height: 100px;">
           </div>
+          <div class="imagens-caracteristicas">
+            <br>1. <img src="../assets/imgs/laranja.jpg" alt="" style="height: 100px;">
+            <br>2. <img src="../assets/imgs/branco.jpg" alt="" style="height: 100px;">
+            <br>3. <img src="../assets/imgs/preto.jpg" alt="" style="height: 100px;">
+          </div>
+
+          <div class="imagens-caracteristicas">
+            <br>4. <img src="../assets/imgs/cinza.jpg" alt="" style="height: 100px;">
+            <br>5. <img src="../assets/imgs/siames.jpg" alt="" style="height: 100px;">
+            <br>6. <img src="../assets/imgs/rajado.jpg" alt="" style="height: 100px;">
+          </div>
+
+          <div class="imagens-caracteristicas">
+            <br>7. <img src="../assets/imgs/preto-e-branco.jpg" alt="" style="height: 100px;">
+            <br>8. <img src="../assets/imgs/rajado-e-branco.jpg" alt="" style="height: 100px;">
+            <br>9. <img src="../assets/imgs/rajado-e-preto.jpg" alt="" style="height: 100px;">
+          </div>
+
         </div>
       </div>
 
       <!-- Quarta parte do formulário -->
       <!-- formulário -->
-      <div class="card-cadastroGato">
+      <div id="card_cadastroGato4" class="card-cadastroGato">
         <div class="formulario">
           <h2>Finalizando</h2>
-          <p>Fique tranquilo! A confirmação de email é para garantir a segurança do gatinho e do registro</p>
+          <p>Fique tranquilo! A confirmação de email é para garantir a segurança do gatinho e do registro!</p>
 
           <div class="campo">
             <span>Confirme seu email:</span><br>
@@ -182,7 +244,7 @@
           </div>
 
           <button class="button-cadastrar" onclick="cadastrar()">Cadastrar Gato</button>
-          <a href="./cadastro.html">Quer adotar um gatinho?</a>
+          <a href="./adocao.html">Quer adotar um gatinho?</a>
 
           <!-- mensagem de erro -->
           <div class="alerta_erro">
@@ -203,42 +265,58 @@
 
 
 
-      <!-- Footer -->
-      <div class="footer">
-        <div class="container">
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
 
-          <div class="footer-left">
-            <img src="../assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
-          </div>
-
-          <div class="footer-info">
-            <h1>Compania</h1>
-            <a class="footer-nav" href="index.html">Home</a>
-            <a class="footer-nav" href="sobreNos.html">Sobre Nós</a>
-            <a class="footer-nav" href="faleConosco.html">Fale Conosco</a>
-          </div>
-
-          <div class="footer-info">
-            <h1>Usuário</h1>
-            <a class="footer-nav" href="login.html">Login</a>
-            <a class="footer-nav" href="cadastro.html">Cadastro</a>
-            <a class="footer-nav" href="cadastroGato.html">Cadastrar gato</a>
-          </div>
-
-          <div class="footer-info">
-            <h1>Gatinhos</h1>
-            <a class="footer-nav" href="simulador.html">Adoção</a>
-            <a class="footer-nav" href="simulador.html">CatBlog</a>
-            <a class="footer-nav" href="simulador.html">Simulação</a>
-          </div>
-
-        </div>
+      <div class="footer-left">
+        <img src="../assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
       </div>
+
+      <div class="footer-info">
+        <h1>Compania</h1>
+        <a class="footer-nav" href="index.html">Home</a>
+        <a class="footer-nav" href="sobreNos.html">Sobre Nós</a>
+        <a class="footer-nav" href="faleConosco.html">Fale Conosco</a>
+      </div>
+
+      <div class="footer-info">
+        <h1>Usuário</h1>
+        <a class="footer-nav" href="login.html">Login</a>
+        <a class="footer-nav" href="cadastro.html">Cadastro</a>
+        <a class="footer-nav" href="cadastroGato.html">Cadastrar gato</a>
+      </div>
+
+      <div class="footer-info">
+        <h1>Gatinhos</h1>
+        <a class="footer-nav" href="simulador.html">Adoção</a>
+        <a class="footer-nav" href="simulador.html">CatBlog</a>
+        <a class="footer-nav" href="simulador.html">Simulação</a>
+      </div>
+
+    </div>
+  </div>
 </body>
 
 </html>
 
 <script>
+  function iniciar() {
+    card_cadastroGato_titulo.style.display = 'none';
+    card_cadastroGato_regras.style.display = 'flex';
+
+  }
+
+  function regras() {
+    card_cadastroGato_titulo.style.display = 'none';
+    card_cadastroGato_regras.style.display = 'none';
+    card_cadastroGato1.style.display = 'flex';
+    card_cadastroGato2.style.display = 'flex';
+    card_cadastroGato3.style.display = 'flex';
+    card_cadastroGato4.style.display = 'flex';
+
+  }
+
   function cadastrar() {
 
     aguardar();

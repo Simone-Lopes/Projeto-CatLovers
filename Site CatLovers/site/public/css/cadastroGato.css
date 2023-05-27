@@ -1,12 +1,12 @@
-/* Banner do fundo */
+/* Fundo */
 .cadastroGato {
     background-color: #FAEAEB;
     width: 100vw;
-    height: 250vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(#FAEAEB, #FFB8BC);
+    background-image: linear-gradient(#ffffff, #FFB8BC);
 }
 
 .container-cadastro {
@@ -19,16 +19,136 @@
     justify-content: center;
 } 
 
+/* banner titulo */
+#card_cadastroGato_titulo{
+    width: 100%;
+    height: 75vh;
+    background-image: url(../assets/imgs/idosos-com-gato-de-estimacao.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    margin: 5%;
+    align-items: center;
+    justify-content: center;
+}
+.banner-text {
+    width: 30%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    justify-content: center;
+  }
+
+  .banner-text h1 {
+    color: #ffffff;
+    text-shadow: rgb(35, 35, 35) 0.1em 0.1em 0.2em;
+    font-size: 60px;
+    text-transform: uppercase;
+    margin: 0%;
+  }
+  
+  .banner-text p {
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-shadow: rgb(58, 58, 58) 0.1em 0.1em 0.2em;
+  }
+  
+  .banner-text span {
+    color: #F3838D;
+  }
+  .button-more {
+    width: 15vw;
+    height: 6vh;
+    background-color: #F3838D;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .button-more:hover {
+    background-color: #FFB8BC;
+    transition: 0.15s ease-in-out;
+  }
+
+/* Banner de regras */
+
+#card_cadastroGato_regras{
+    width: 100%;
+    height: 75vh;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 5%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 8px #979797;
+}
+
+#card_cadastroGato_regras h1 {
+    color: #393D46;
+    font-size: 45px;
+    text-transform: uppercase;
+    margin: 0%;
+  }
+  
+  #card_cadastroGato_regras p {
+    color: #969696;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 0%;
+  }
+  
+  #card_cadastroGato_regras span {
+    color: #F3838D;
+  }
+  .bloco-regras{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .regras{
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .imagem-regras{
+    width: 50%;
+    height: 50vh;
+    background-image: url(../assets/imgs/gato-adotado-cadastro.jpg);
+    background-size: cover;
+    margin: 0%;
+    border-radius: 20px;
+  }
+  .coluna{
+    display: flex;
+    width: 90%;
+    justify-content: baseline;
+    align-items: center;
+  }
+  .coluna img{
+    width: 60px;
+    height: 60px;
+    margin-right: 5%;
+  }
+
 /* Formulário */
+
 .card-cadastroGato{
     width: 60%;
     height: auto;
     background-color: rgb(255, 255, 255);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;    
     border-radius: 20px;
-    margin-top: 10px;
+    margin-top: 5%;
     box-shadow: 1px 1px 8px #979797;
 }
 .card-cadastroGato h2{
@@ -96,6 +216,15 @@ textarea{
     border-bottom:1px solid #b9b9b9;
     font-size: 15px;
     margin-bottom: 20px;
+}
+.imagens-caracteristicas{
+    display: flex;
+}
+.imagens-caracteristicas img{
+    height: 40px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
 }
 .button-cadastrar{
     background-color: #F3838D;

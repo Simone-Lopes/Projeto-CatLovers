@@ -4,7 +4,7 @@ body {
 /* Banner Adote */
 .banner-adote {
     width: 100vw;
-    height: 70vh;
+    height: 65vh;
     background-image: url(../assets/imgs/gatinho-fundo-azul.jpg);
     background-size: cover;
     display: flex;
