@@ -56,19 +56,43 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
+CREATE TABLE perguntas(
+id INT PRIMARY KEY AUTO_INCREMENT,
+descricao VARCHAR(200)
+);
+
+CREATE TABLE respostas (
+id INT PRIMARY KEY AUTO_INCREMENT,
+descricao VARCHAR(45),
+fkPergunta INT,
+CONSTRAINT fkPergunta foreign key (fkPergunta) REFERENCES perguntas(id)
+);
+
+INSERT INTO perguntas VALUES
+	(null, 'teste 01'),
+    (null, 'teste 02');
+    
+INSERT INTO respostas values 
+    (null, 8, 1),
+    (null, 8, 1),
+    (null, 10, 1),
+    (null, 12, 2),
+    (null, 2, 2),
+    (null, 8, 2);
 
 INSERT INTO usuario values 
 	('Simone Lopes', '56485406808', 'SP', 'São Paulo', '11968023976', 'simone@gmail.com', '123456');
 
 INSERT INTO gato values 
-	(null, 'Lucy teste', 'Fêmea', 'Filhote', 'Médio', 'Sim', 'Não', 'Laranja', '0.20', '1.20', 'Lucy foi resgatada por uma ONG, pois foi encontrada em uma venda ilegal de animais. Ajude Lucy a achar uma familia em que possa encher de amor!', 'http://www.sisi.com', 'siames', now(), 'simone@gmail.com', null);
+	(null, 'Lucy teste', 'Fêmea', 'Filhote', 'Médio', 'Sim', 'Não', 'Laranja', '0.20', '1.20', 'Lucy foi resgatada por uma ONG, pois foi encontrada em uma venda ilegal de animais. Ajude Lucy a achar uma familia em que possa encher de amor!', 'http://www.sisi.com', 'siames.jpg', now(), 'simone@gmail.com', null);
     
     select * from usuario;
 	select * from gato;
+    select * from respostas;
     
-	select * from usuario join gato on gato.fk_cadastrado = usuario.email;
+	select *
+    from usuario as u join gato as g on gato.fk_cadastrado = usuario.email;
     
-    truncate table gato;
+    truncate table respostas;
 
-    
     

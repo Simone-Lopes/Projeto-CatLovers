@@ -8,7 +8,7 @@
 
   <title>CatLovers | Simulador</title>
 
-  <script src="./js/funcoes.js"></script>
+  <script src="../js/funcoes.js"></script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/simulador.css">
 
@@ -45,25 +45,99 @@
 
   <!-- Banner do simulado -->
   <div class="simulador">
-    <div class="banner_simulado">
+    <div class="banner-simulado" id="banner_simulado">
       <div class="banner-text">
         <h1>Inicie seu <span>simulado</span></h1>
         <p>Tenha uma média para preparo financeiro antes da adoção</p>
-        <a href='#'><button onclick="simulador()" class="button-more">INICIAR</button></a>
-      </div>
-    </div>
-
-
-    <!-- Regras e explicações -->
-    <div class="banner-perguntas">
-      <div class="text-perguntas">
-        <h1>Contextualização</h1>
-        
+        <a href='#'><button onclick="iniciar()" class="button-more">INICIAR</button></a>
       </div>
     </div>
 
     <!-- Iniciando perguntas -->
-    <div class="banner-perguntas">
+    <div class="banner-perguntas" id="banner_perguntas">
+      <h1>Simulador <span>Financeiro</span></h1>
+      <p id="subtitulo">Responda as seguintes perguntas para obter uma média de gastos antes de adotar um gato.</p>
+      <div class="container">
+
+        <!-- primeira coluna de perguntas -->
+        <div class="divisoes">
+          <div>
+            <p>Qual a idade do gato que você quer adotar?</p>
+            <select id="select_idade">
+              <option disabled selected>Selecione...</option>
+              <option value="filhote">Filhote</option>
+              <option value="jovem">Jovem</option>
+              <option value="adulto">Adulto</option>
+              <option value="idoso">Idoso</option>
+            </select>
+          </div>
+
+          <div>
+            <p>Escolha a marca de ração que seu gato irá comer:</p>
+            <select id="select_racao">
+              <!-- <option disabled selected>Selecione...</option> -->
+              <option value=0>Whiskas</option>
+              <option value=1>Friskies</option>
+              <option value=2>Golden</option>
+              <option value=3>GranPlus</option>
+              <option value=4>Premier</option>
+              <option value=5>Purina</option>
+            </select>
+          </div>
+
+          <div>
+            <p>Como será o banheiro do seu gato?</p>
+            <select id="select_banheiro">
+              <option disabled selected>Selecione...</option>
+              <option value="sim">Areia granulada</option>
+              <option value="nao">Cristais de Sílica</option>
+              <option value="nao">Tapete higiênico</option>
+            </select>
+          </div>
+
+        </div>
+        <!-- segunda coluna de perguntas -->
+        <div class="divisoes">
+
+          <div>
+            <p>Há janelas na sua casa? Quantas?</p>
+            <div class="div-radio" id="select_janela">
+              <input id="input_SJ" type="radio" name="gender1" value="sim" onclick="input('sim')">
+              <span for="sim">Sim</span>
+              <input id="input_NJ" type="radio" name="gender1" value="nao" onclick="input('nao')">
+              <span for="nao">Não</span>
+              <input style="display: none;" type="number" min="0" placeholder="N° de janelas" id="input_numJanelas">
+            </div>
+          </div>
+
+          <div>
+            <p>Qual o intervalo dos remédios de vermifugação e de anti-pulgas?</p>
+            <select id="select_remedios">
+              <option disabled selected>Selecione...</option>
+              <option value="sim">6 meses (ideal)</option>
+              <option value="nao">8 meses</option>
+              <option value="nao">12 meses</option>
+            </select>
+          </div>
+
+          <div>
+            <p>O gato é castrado?</p>
+            <select id="select_castrado">
+              <option disabled selected>Selecione...</option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+      <a href='#'><button onclick="simular()" class="button-simular">CALCULAR MÉDIA</button></a>
+
+    </div>
+
+    <!-- Respostas -->
+    <div class="banner-perguntas" id="banner_resposta">
+      oi
     </div>
 
   </div>
@@ -102,7 +176,65 @@
 
 </html>
 <script>
-  function simulador(){
+
+  // Coletando inputs e armazenando em variaveis
+  var idade = select_idade.value;
+  var racao = select_racao.value;
+  var banheiro = select_banheiro.value;
+  var janela = select_janela.value;
+  var numJanelas = Number(input_numJanelas.value);
+  var remedios = select_remedios.value;
+  var castrado = select_castrado.value;
+
+  //Esse contador será o valor total de gastos
+  var contador = 0;
+
+  //Calculando médias de gramas de ração por idade do gato
+  var racaofilhote = (45 + 50 + 55) / 3;
+  var racaoJovem = (55 + 65) / 2;
+  var racaoAdulto = (65 + 70 + 75) / 3;
+  var racaoIdoso = (75 + 80 + 85) / 3;
+
+  // Criando vetores com a marca das rações e com a média dos valores
+  var listaRacao = ["Whiskas", "Friskies", "Golden", "GranPlus", "Premier", "Purina"];
+  var listaRacaoValores = [30.00, 15.00, 61.90, 27.90, 28.90, 16.39];
+  var listaRacaoKg = [1.000, 0.500, 3.000, 1.000, 0.500, 0.700];
+
+  // Criando vetores com o tipo de banheiro e valores
+  var listaBanheiro = ["Areia granulada", "Cristais de Sílica", "Tapete higiênico"];
+  var listaBanheiroValores = [12.00, 49.99, 44.90];
+
+  // Criando vetores com o tipo de remedio e valores
+  var listaRemedio = ["Vermifuga", "Anti-pulgas"];
+  var listaRemedioValores = [20.00, 49.99, 18.00];
+
+  //Função input e radio
+  function input(resp) {
+    if (resp == "sim") {
+
+      input_numJanelas.style.display = 'block'
+    } else {
+      input_numJanelas.style.display = 'none'
+    }
+  }
+
+  function iniciar() {
+    // Alterando visibilidade das divs
     banner_simulado.style.display = 'none';
+    banner_perguntas.style.display = 'flex';
+    banner_resposta.style.display = 'flex';
+  }
+
+  function simular() {
+    // Iniciando validações
+    // if (castrado == 'nao') {
+    //   contador = contador + 400.00;
+    // } else if (janela == 'sim') {
+    //   contador = contador + (numJanelas * 40.00);
+    // }
+    listaRacao.push;
+
+      console.log(racao)
+  
   }
 </script>

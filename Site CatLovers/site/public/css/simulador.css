@@ -1,5 +1,5 @@
 /* Banner simulado */
-.simulador{
+.simulador {
   width: 100%;
   height: auto;
   display: flex;
@@ -8,72 +8,147 @@
   align-items: center;
 }
 .banner-simulado {
-    width: 70vw;
-    height: 80vh;
-    background-image: url(../assets/imgs/gato-banner-simulado.jpg);
-    background-size: cover;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 2%;
-    border-radius: 20px;
-  }
-  
-  .banner-text {
-    width: 23%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    align-items: flex-end;
-    margin-right: 5%;
-  
-  }
-  
-  .banner-text h1 {
-    color: #ffffff;
-    text-shadow: rgb(47, 47, 47) 0.1em 0.1em 0.2em;
-    font-size: 50px;
-    text-transform: uppercase;
-    margin: 0%;
-  }
-  
-  .banner-text p {
-    color: #ffffff;
-    font-size: 15px;
-    text-transform: uppercase;
-    text-shadow: rgb(47, 47, 47) 0.1em 0.1em 0.2em;
-  }
-  
-  .banner-text span {
-    color: #F3838D;
-  }
-  .button-more {
-    width: 12vw;
-    height: 7vh;
-    background-color: #F3838D;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    margin-top: 20px;
-  }
-  
-  .button-more:hover {
-    background-color: #FFB8BC;
-    transition: 0.15s ease-in-out;
-  }
+  width: 70vw;
+  height: 80vh;
+  background-image: url(../assets/imgs/gato-banner-simulado.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 2%;
+  border-radius: 20px;
+}
+.banner-text {
+  width: 23%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-items: flex-end;
+  margin-right: 5%;
+}
+.banner-text h1 {
+  color: #ffffff;
+  text-shadow: rgb(47, 47, 47) 0.1em 0.1em 0.2em;
+  font-size: 50px;
+  text-transform: uppercase;
+  margin: 0%;
+}
 
-  /* perguntas */
-  .banner-perguntas{
-    width: 70vw;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2%;
-    border-radius: 20px;
-    border: 1px solid #FFB8BC;
-  }
-  .text-perguntas{
+.banner-text p {
+  color: #ffffff;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-shadow: rgb(47, 47, 47) 0.1em 0.1em 0.2em;
+}
 
-  }
+.banner-text span {
+  color: #F3838D;
+}
+
+.button-more {
+  width: 12vw;
+  height: 7vh;
+  background-color: #F3838D;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  margin-top: 20px;
+}
+
+.button-more:hover {
+  background-color: #FFB8BC;
+  transition: 0.15s ease-in-out;
+}
+
+/* perguntas */
+.banner-perguntas {
+  width: 70vw;
+  height: 80vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin: 2%;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 8px #e79a9e;
+  border: 1px solid #FFB8BC;
+}
+.container{
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+}
+
+.divisoes {
+  width: 100%;
+  height: auto;
+  margin: 2%;
+}
+.divisoes p{
+  color: #979797;
+}
+.divisoes input{
+  background-color: #f7f7f7;
+  width: 100px;
+  height: 28px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #cfcece;
+  margin-left: 25px;
+}
+#input_SJ, #input_NJ{
+  background-color: #f7f7f7;
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  border: 1px solid #cfcece;
+}
+.divisoes select{
+  background-color: #f7f7f7;
+  color: #979797;
+  width: 308px;
+  height: 34px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #cfcece;
+}
+::placeholder{
+  color: #979797;
+}
+select:invalid {
+  color: #979797;
+}
+.button-simular{
+  background-color: #F3838D;
+  color: #ffffff;
+  font-size: 15px;
+  width: 305px;
+  height: 50px;
+  margin-bottom: 15%;
+  border-radius: 10px;
+  border: none;
+}
+.button-simular:hover{
+  background-color: #ffffff;
+  border: 2px solid #F3838D;
+  color: #F3838D;
+}
+.banner-perguntas h1{
+  color: #393D46;
+  margin-bottom: 0%;
+  font-size: 50px;
+}
+.banner-perguntas span{
+  color: #F3838D;
+}
+#subtitulo{
+  color: #F3838D;
+  margin: 0%;
+}
+.div-radio{
+  display: flex;
+}
