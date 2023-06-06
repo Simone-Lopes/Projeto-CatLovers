@@ -1,0 +1,119 @@
+.container-dashboard {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+/* Nav bar laeral */
+.nav-bar-lateral {
+  width: 800px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  float: left;
+  background-color: #FFB8BC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-btn {
+  width: 100%;
+  height: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.org-btn a{
+  background: none;
+  color: #393D46;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+}
+.agora{
+  color: #ffffff;
+}
+
+/* usuario */
+.usuario {
+  width: 80%;
+  height: 15vh;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+.usuario h2 {
+  color: #393D46;
+  margin: 0%;
+}
+
+.usuario p {
+  color: #7b7d81;
+  margin: 0%;
+}
+
+.usuario img {
+  height: 50px;
+  width: 20%;
+  margin-right: 5px;
+}
+
+.conteudo-usuario {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+/* pagina graficos */
+.graficos {
+  width: 100%;
+  float: right;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tituloGraficos {
+  color: rgb(186, 181, 181);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.label-captura {
+  height: 80px;
+}
+
+.display-block {
+  display: block;
+  width: 80%;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/*  Criando KPI */
+.kpi {
+  width: 80%;
+  height: 18vh;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-color: #F3838D;
+  color: white;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

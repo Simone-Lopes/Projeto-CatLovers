@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CatLovers | Dashboard</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboards.css">
+    <script src="../js/funcoes.js"></script>
+
+    <link rel="icon" href="../assets/icon/favicon.png">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navbar superior -->
+    <div class="header">
+        <div class="container">
+
+            <div class="logo">
+                <img class="logo" src="../assets/imgs/Logotipo-horizontal.png" alt="logo catlovers">
+            </div>
+
+            <div class="org-nav-bar">
+                <ul class="navbar">
+                    <li class="pagina"><a href="catblog.html">CatBlog</a></li>
+                    <li class="paginas"><a href="adocao.html">Adoção</a></li>
+                    <li class="paginas"><a href="simulador.html">Simulador</a></li>
+                    <li class="agora"><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <ul class="navbar2">
+                    <li class="paginas"><a href="cadastroGato.html">Cadastrar Gato</a></li>
+                    <li>|</li>
+                    <li class="paginas"><a href="../index.html">Sair</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Nav bar lateral -->
+    <div class="container-dashboard">
+
+        <div class="nav-bar-lateral">
+            <div class="usuario">
+                <img src="../assets/imgs/icons8-usuário-50.png" alt="">
+                <div class="conteudo-usuario">
+                    <h2 id="b_usuario"> Bem vindo(a)!</h2>
+                    <p id="b_email"></p>
+                </div>
+            </div>
+
+            <div class="org-btn">
+                <a href="dashboard.html" style="color: #ffffff;">Analytics</a>
+                <a href="pesquisa.html">Pesquisa</a>
+            </div>
+
+        </div>
+
+
+        <div id="graficos1" class="graficos">
+
+            <div class="kpi" id="kpi1">
+                teste
+            </div>
+
+            <div id="grafico1" class="display-block">
+                <h3 class="tituloGraficos">
+                    <span id="tituloPergunta1"></span>
+                    <span>Você já adotou ou teve interesse em adotar um gato?</span>
+                </h3>
+                <div class="graph">
+                    <canvas id="myChartCanvas1"></canvas>
+                </div>
+                <div class="label-captura">
+                    <p id="avisoCaptura1" style="color: rgb(0, 0, 0)"></p>
+                </div>
+            </div>
+
+            <div id="grafico2" class="display-block">
+                <h3 class="tituloGraficos">
+                    <span id="tituloPergunta2"></span>
+                    <span>Você já ouviu a mentira de que gatos não amam os donos?</span>
+                </h3>
+                <div class="graph">
+                    <canvas id="myChartCanvas2"></canvas>
+                </div>
+                <div class="label-captura">
+                    <p id="avisoCaptura2" style="color: rgb(0, 0, 0)"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="graficos2" class="graficos">
+
+            <div class="kpi" id="kpi2">
+                teste
+            </div>
+
+            <div id="grafico3" class="display-block">
+                <h3 class="tituloGraficos" class="display-block">
+                    <span id="tituloPergunta3"></span>
+                    <span>Você conhece alguém que diz preferir cães?</span>
+                </h3>
+                <div class="graph">
+                    <canvas id="myChartCanvas3"></canvas>
+                </div>
+                <div class="label-captura">
+                    <p id="avisoCaptura3" style="color: rgb(0, 0, 0)"></p>
+                </div>
+            </div>
+
+            <div id="grafico4" class="display-block">
+                <h3 class="tituloGraficos">
+                    <span id="tituloPergunta4"></span>
+                    <span>Você acreditava em algo sobre gatos e descobriu que não era verídico através da nossa
+                        plataforma?</span>
+                </h3>
+                <div class="graph">
+                    <canvas id="myChartCanvas4"></canvas>
+                </div>
+                <div class="label-captura">
+                    <p id="avisoCaptura4" style="color: rgb(0, 0, 0)"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+
+            <div class="footer-left">
+                <img src="../assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
+            </div>
+
+            <div class="footer-info">
+                <h1>Compania</h1>
+                <a class="footer-nav" href="../index.html">Home</a>
+                <a class="footer-nav" href="../sobreNos.html">Sobre Nós</a>
+                <a class="footer-nav" href="../faleConosco.html">Fale Conosco</a>
+            </div>
+
+            <div class="footer-info">
+                <h1>Usuário</h1>
+                <a class="footer-nav" href="../login.html">Login</a>
+                <a class="footer-nav" href="../cadastro.html">Cadastro</a>
+                <a class="footer-nav" href="./cadastroGato.html">Cadastrar gato</a>
+            </div>
+
+            <div class="footer-info">
+                <h1>Gatinhos</h1>
+                <a class="footer-nav" href="./adocao.html">Adoção</a>
+                <a class="footer-nav" href="./catblog.html">CatBlog</a>
+                <a class="footer-nav" href="./simulador.html">Simulação</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGraficos();
+    function obterDadosGraficos() {
+        obterDadosGrafico(1)
+        obterDadosGrafico(2)
+        obterDadosGrafico(3)
+        obterDadosGrafico(4)
+    }
+
+    // verificar_autenticacao();
+
+    function alterarTitulo(idPergunta) {
+        var tituloPergunta = document.getElementById(`tituloPergunta${idPergunta}`)
+        tituloPergunta.innerHTML += "<span style='color: #e6005a'>Pergunta " + idPergunta + "</span>"
+
+
+    }
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(idPergunta) {
+
+        alterarTitulo(idPergunta)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${idPergunta}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idPergunta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idPergunta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = ['Resposta'];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Sim',
+                data: [],
+                fill: false,
+                backgroundColor: '#F3838D',
+                tension: 0.1
+            },
+            {
+                label: 'Não',
+                data: [],
+                fill: false,
+                backgroundColor: 'rgb(199, 52, 52)',
+                tension: 0.1
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registroSim = resposta[i].Sim;
+            var registroNao = resposta[i].Nao;
+
+            console.log(dados);
+
+            // labels.push(resposta[i]); // legenda abaixo do gráfico
+            dados.datasets[0].data.push(registroSim); // dados do grafico
+            dados.datasets[1].data.push(registroNao); // dados do grafico
+
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas${idPergunta}`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico(idPergunta, dados, myChart), 5000);
+    }
+
+
+    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+    // buscando a última medida inserida em tabela contendo as capturas, 
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function atualizarGrafico(idPergunta, dados, myChart) {
+
+        fetch(`/medidas/tempo-real/${idPergunta}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    obterdados(idPergunta);
+                    // alertar(novoRegistro, idAquario);
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(dados);
+
+                    let avisoCaptura = document.getElementById(`avisoCaptura${idPergunta}`)
+                    avisoCaptura.innerHTML = ""
+
+
+                    if (novoRegistro[0].descricao == dados.labels[dados.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].descricao)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dados.labels[dados.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(novoRegistro[0].descricao); // incluir um novo momento
+
+                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(novoRegistro[0].descricao); // incluir uma nova medida de umidade
+
+                        // dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
+                        // dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+
+                        myChart.update();
+                    }
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idPergunta, dados, myChart), 5000);
+                });
+            } else {
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idPergunta, dados, myChart), 5000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    function registrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var p1Var = select_p1.value;
+        var p2Var = select_p2.value;
+        var p3Var = select_p3.value;
+        var p4Var = select_p4.value;
+
+
+        if (p1Var == "" || p2Var == "" || p3Var == "" || p4Var == "") {
+            cardErro.style.display = "block"
+            //  mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            //   finalizarAguardar();
+            //  return false;
+        }
+
+        // Enviando o valor da nova input
+        fetch("../medidas/cadastrarRespostas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                p1Server: p1Var,
+                p2Server: p2Var,
+                p3Server: p3Var,
+                p4Server: p4Var
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.color = "green";
+
+                mensagem_erro.innerHTML = "Cadastro de perguntas realizado com sucesso! Redirecionando para tela de adoção...";
+
+                setTimeout(() => {
+                    window.location = "#";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro de perguntas!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    //FAZENDO KPIS
+    //Aqui chamamos o arquivo listar vindo da gatoModel
+
+    fetch("../gatos/listar", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((resposta) => {
+        return resposta.json();
+
+    }).then((data) => {
+        var gatosCadastrados = data.length;
+        // console.log(data.fk_adotado == -1)
+
+        // for (var i = 0; i < data.length; i++) {
+        //     const element = data[i];
+            
+        // }
+        
+        kpi1.innerHTML = `Número de gatos cadastrados:<h1>${gatosCadastrados}</h1>`;
+    })
+
+    // Chamando usuarios para a kpi
+    fetch("../usuarios/listar", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((resposta) => {
+        return resposta.json();
+
+    }).then((data) => {
+        var usuariosCadastrados = data.length;
+        kpi2.innerHTML = `Número de usuários cadastrados:<h1>${usuariosCadastrados}</h1>`;
+    })
+
+
+
+</script>

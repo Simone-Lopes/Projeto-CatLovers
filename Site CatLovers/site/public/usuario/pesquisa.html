@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CatLovers | Dashboard</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pesquisa.css">
+    <script src="../js/funcoes.js"></script>
+
+    <link rel="icon" href="../assets/icon/favicon.png">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navbar superior -->
+    <div class="header">
+        <div class="container">
+
+            <div class="logo">
+                <img class="logo" src="../assets/imgs/Logotipo-horizontal.png" alt="logo catlovers">
+            </div>
+
+            <div class="org-nav-bar">
+                <ul class="navbar">
+                    <li class="pagina"><a href="catblog.html">CatBlog</a></li>
+                    <li class="paginas"><a href="adocao.html">Adoção</a></li>
+                    <li class="paginas"><a href="simulador.html">Simulador</a></li>
+                    <li class="agora"><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <ul class="navbar2">
+                    <li class="paginas"><a href="cadastroGato.html">Cadastrar Gato</a></li>
+                    <li>|</li>
+                    <li class="paginas"><a href="../index.html">Sair</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Nav bar lateral -->
+    <div class="container-dashboard">
+
+        <div class="nav-bar-lateral">
+            <div class="usuario">
+                <img src="../assets/imgs/icons8-usuário-50.png" alt="">
+                <div class="conteudo-usuario">
+                    <h2 id="b_usuario"> Bem vindo(a)!</h2>
+                    <p id="b_email"></p>
+                </div>
+            </div>
+
+            <div class="org-btn">
+                <a href="dashboard.html">Analytics</a>
+                <a href="pesquisa.html" style="color: #ffffff;">Pesquisa</a>
+            </div>
+
+        </div>
+
+        <div class="container-form" id="container_form">
+            <div class="card-formulario">
+                <h1>Responda a nossa <span>pesquisa!</span></h1>
+
+                <div class="formulario">
+
+                    <div class="pergunta">
+                        <p><span>Pergunta 01: </span><br> Você já adotou ou teve interesse em adotar um gato?</p>
+                        <select id="select_p1">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="pergunta">
+                        <p><span>Pergunta 02: </span><br> Você já ouviu a mentira de que gatos não amam os donos?</p>
+                        <select id="select_p2">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="pergunta">
+                        <p> <span>Pergunta 03: </span><br> Você conhece alguém que diz preferir cães?</p>
+                        <select id="select_p3">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="pergunta">
+                        <p><span>Pergunta 04: </span><br> Você acreditava em algo sobre gatos e descobriu que não era
+                            verídico através da nossa plataforma?</p>
+                        <select id="select_p4">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+
+                    <button class="button-registrar" onclick="registrar()">Responder!</button>
+
+                    <div class="resposta" id="resposta">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+
+            <div class="footer-left">
+                <img src="../assets/imgs/Logotipo-Vertical (2).png" alt="logo" width="200px">
+            </div>
+
+            <div class="footer-info">
+                <h1>Compania</h1>
+                <a class="footer-nav" href="../index.html">Home</a>
+                <a class="footer-nav" href="../sobreNos.html">Sobre Nós</a>
+                <a class="footer-nav" href="../faleConosco.html">Fale Conosco</a>
+            </div>
+
+            <div class="footer-info">
+                <h1>Usuário</h1>
+                <a class="footer-nav" href="../login.html">Login</a>
+                <a class="footer-nav" href="../cadastro.html">Cadastro</a>
+                <a class="footer-nav" href="./cadastroGato.html">Cadastrar gato</a>
+            </div>
+
+            <div class="footer-info">
+                <h1>Gatinhos</h1>
+                <a class="footer-nav" href="./adocao.html">Adoção</a>
+                <a class="footer-nav" href="./catblog.html">CatBlog</a>
+                <a class="footer-nav" href="./simulador.html">Simulação</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
+
+
+    function registrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var p1Var = select_p1.value;
+        var p2Var = select_p2.value;
+        var p3Var = select_p3.value;
+        var p4Var = select_p4.value;
+
+
+        if (p1Var == "" || p2Var == "" || p3Var == "" || p4Var == "") {
+            resposta.innerHTML = `<span>Obrigada por contribuir!</span>`;
+            //  mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            //   finalizarAguardar();
+            //  return false;
+        }
+
+        // Enviando o valor da nova input
+        fetch("../medidas/cadastrarRespostas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                p1Server: p1Var,
+                p2Server: p2Var,
+                p3Server: p3Var,
+                p4Server: p4Var
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                
+
+                setTimeout(() => {
+                    window.location ="dashboard.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro de perguntas!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+
+    }
+
+</script>

@@ -31,7 +31,7 @@
           <li class="paginas"><a href="catblog.html">CatBlog</a></li>
           <li class="paginas"><a href="adocao.html">Adoção</a></li>
           <li class="agora"><a href="simulador.html">Simulador</a></li>
-          <li class="paginas"><a href="../dashboard/dashboard.html">Dashboard</a></li>
+          <li class="paginas"><a href="dashboard.html">Dashboard</a></li>
         </ul>
         <ul class="navbar2">
           <li class="paginas"><a href="cadastroGato.html">Cadastrar Gato</a></li>
@@ -57,7 +57,7 @@
     <div class="banner-perguntas" id="banner_perguntas">
       <h1>Simulador <span>Financeiro</span></h1>
       <p id="subtitulo">Responda as seguintes perguntas para obter uma média de gastos antes de adotar um gato.</p>
-      <div class="container">
+      <div class="container-simulador">
 
         <!-- primeira coluna de perguntas -->
         <div class="divisoes">
@@ -75,7 +75,7 @@
           <div>
             <p>Escolha a marca de ração que seu gato irá comer:</p>
             <select id="select_racao">
-              <!-- <option disabled selected>Selecione...</option> -->
+              <option disabled selected>Selecione...</option>
               <option value=0>Whiskas</option>
               <option value=1>Friskies</option>
               <option value=2>Golden</option>
@@ -89,9 +89,9 @@
             <p>Como será o banheiro do seu gato?</p>
             <select id="select_banheiro">
               <option disabled selected>Selecione...</option>
-              <option value="sim">Areia granulada</option>
-              <option value="nao">Cristais de Sílica</option>
-              <option value="nao">Tapete higiênico</option>
+              <option value=0>Areia granulada</option>
+              <option value=1>Cristais de Sílica</option>
+              <option value=2>Tapete higiênico</option>
             </select>
           </div>
 
@@ -100,9 +100,10 @@
         <div class="divisoes">
 
           <div>
-            <p>Há janelas na sua casa? Quantas?</p>
-            <div class="div-radio" id="select_janela">
-              <input id="input_SJ" type="radio" name="gender1" value="sim" onclick="input('sim')">
+            <p id="textoJanela">Há telas nas janelas?</p>
+            <div class="div-radio" id="div_janela">
+
+              <input id="input_SJ" type="radio" name="gender" value="sim" onclick="input('sim')">
               <span for="sim">Sim</span>
               <input id="input_NJ" type="radio" name="gender1" value="nao" onclick="input('nao')">
               <span for="nao">Não</span>
@@ -114,9 +115,9 @@
             <p>Qual o intervalo dos remédios de vermifugação e de anti-pulgas?</p>
             <select id="select_remedios">
               <option disabled selected>Selecione...</option>
-              <option value="sim">6 meses (ideal)</option>
-              <option value="nao">8 meses</option>
-              <option value="nao">12 meses</option>
+              <option value=0>6 meses (ideal)</option>
+              <option value=1>8 meses</option>
+              <option value=2>12 meses</option>
             </select>
           </div>
 
@@ -137,7 +138,15 @@
 
     <!-- Respostas -->
     <div class="banner-perguntas" id="banner_resposta">
-      oi
+      <h1>Valores gastos em <span> 01 ano</span></h1>
+      <div class="banner-container">
+        <br><br>
+        <div id="div_racao" class="racao"></div>
+        <div id="div_lista" class="racao"></div>
+      </div>
+      <div class="div_descricao" id="div_descricao"></div>
+      <div id="div_total" class="div_total"></div>
+
     </div>
 
   </div>
@@ -177,41 +186,26 @@
 </html>
 <script>
 
-  // Coletando inputs e armazenando em variaveis
-  var idade = select_idade.value;
-  var racao = select_racao.value;
-  var banheiro = select_banheiro.value;
-  var janela = select_janela.value;
-  var numJanelas = Number(input_numJanelas.value);
-  var remedios = select_remedios.value;
-  var castrado = select_castrado.value;
-
   //Esse contador será o valor total de gastos
   var contador = 0;
-
-  //Calculando médias de gramas de ração por idade do gato
-  var racaofilhote = (45 + 50 + 55) / 3;
-  var racaoJovem = (55 + 65) / 2;
-  var racaoAdulto = (65 + 70 + 75) / 3;
-  var racaoIdoso = (75 + 80 + 85) / 3;
 
   // Criando vetores com a marca das rações e com a média dos valores
   var listaRacao = ["Whiskas", "Friskies", "Golden", "GranPlus", "Premier", "Purina"];
   var listaRacaoValores = [30.00, 15.00, 61.90, 27.90, 28.90, 16.39];
-  var listaRacaoKg = [1.000, 0.500, 3.000, 1.000, 0.500, 0.700];
 
   // Criando vetores com o tipo de banheiro e valores
   var listaBanheiro = ["Areia granulada", "Cristais de Sílica", "Tapete higiênico"];
-  var listaBanheiroValores = [12.00, 49.99, 44.90];
+  var listaBanheiroValores = [12.00, 29.99, 34.90];
 
   // Criando vetores com o tipo de remedio e valores
-  var listaRemedio = ["Vermifuga", "Anti-pulgas"];
-  var listaRemedioValores = [20.00, 49.99, 18.00];
+  var listaRemedio = ["Vermifuga", " Anti-pulgas"];
+  var listaRemedioValores = [20.00, 18.00];
+
 
   //Função input e radio
   function input(resp) {
-    if (resp == "sim") {
-
+    if (resp == "nao") {
+      textoJanela.innerHTML += `<br>Digite quantas janelas não possuem tela:`
       input_numJanelas.style.display = 'block'
     } else {
       input_numJanelas.style.display = 'none'
@@ -225,16 +219,118 @@
     banner_resposta.style.display = 'flex';
   }
 
-  function simular() {
-    // Iniciando validações
-    // if (castrado == 'nao') {
-    //   contador = contador + 400.00;
-    // } else if (janela == 'sim') {
-    //   contador = contador + (numJanelas * 40.00);
-    // }
-    listaRacao.push;
-
-      console.log(racao)
   
+  var marcaRacao = 0;
+ 
+
+  function simular() {
+    banner_perguntas.style.display = 'none';
+    banner_resposta.style.display = 'flex';
+
+    // Coletando inputs e armazenando em variaveis
+    var idade = select_idade.value;
+    var racao = Number(select_racao.value);
+    var banheiro = Number(select_banheiro.value);
+    var janela = input_SJ.value;
+    var numJanelas = Number(input_numJanelas.value);
+    var remedios = Number(select_remedios.value);
+    var castrado = select_castrado.value;
+
+    var valorRacao = racao;
+    
+    //Iniciando soma de valores
+
+    // Valor e quantidade da ração
+    listaRacao.push;
+    listaRacaoValores.push;
+
+
+    for (var i = 0; i < listaRacaoValores.length; i++) {
+      if (listaRacaoValores[i] == racao) {
+        valorRacao += listaRacaoValores[i];
+        var marcaRacao = listaRacao[i]
+      }
+    }
+
+    // ANOTAÇÕES
+    // no ano o filhote come 1.400kg
+    // no ano o jovem come 1.680kg
+    // no ano o adulto come 1.960kg
+    // no ano o idoso come 2.240kg
+
+    if (idade == 'filhote') {
+      var racaoFilhote = listaRacaoValores[racao] * 8 //pacotes por ano
+      console.log(racaoFilhote);
+      contador = contador + racaoFilhote;
+      div_racao.innerHTML += `Seu gatinho filhote come 1.400kg de ração por semana, logo, você vai gastar aproximadamente R$${racaoFilhote} por ano com a ração ${listaRacao[racao]}.<br>`;
+
+    } else if (idade == 'jovem') {
+      var racaoJovem = listaRacaoValores[racao] * 10 //pacotes por ano
+      contador = contador + racaoJovem;
+      div_racao.innerHTML += `Seu gatinho jovem come 1.680kg de ração por semana, logo, você vai gastar aproximadamente R$${racaoJovem} por ano com a ração ${listaRacao[racao]}.<br>`;
+
+    } else if (idade == 'adulto') {
+      var racaoAdulto = listaRacaoValores[racao] * 11 //pacotes por ano
+      contador = contador + racaoAdulto;
+      div_racao.innerHTML += `Seu gatinho adulto come 1.960kg de ração por semana, logo, você vai gastar aproximadamente R$${racaoAdulto} por ano com a ração ${listaRacao[racao]}.<br>`;
+
+    } else if (idade == 'idoso') {
+      var racaoIdoso = listaRacaoValores[racao] * 12 //pacotes por ano
+      contador = contador + racaoIdoso;
+      div_racao.innerHTML += `Seu gatinho idoso come 2.240kg de ração por semana, logo, você vai gastar aproximadamente R$${racaoIdoso} por ano com a ração ${listaRacao[racao]} de 2kg.<br>`;
+    }
+
+    var totalBanheiro = 0;
+    for (var i = 0; i < listaBanheiroValores.length; i++) {
+  if (i == banheiro) { 
+    totalBanheiro = listaBanheiroValores[i] * 12;
+    contador = totalBanheiro;
+    break;
+  }
+}
+
+    //Se há janelas e multiplicação
+    var inputJanela = document.getElementById("input_NJ");
+    if (inputJanela.checked) {
+      contador = numJanelas * 20;
+    }
+
+    //Valor e periodo dos remedios
+    listaRemedio.push;
+    listaRemedioValores.push;
+
+    var valorRemedio = 20 + 18;
+    var tipoRemedio = listaRemedio[remedios];
+
+    if (remedios == 0) {
+      var valorRemedio = valorRemedio * 2 //6 meses
+      contador = contador + valorRemedio;
+
+    } else if (remedios == 1) {
+      var valorRemedio = (valorRemedio * 3) / 2 //8 meses
+      contador = contador + valorRemedio;
+
+    } else if (remedios == 2) {
+      contador = contador + valorRemedio;
+    }
+
+    var valorCastração = 0;
+    //Se o gato é castrado
+    if (castrado == 'nao') {
+      var valorCastração = 300.00
+      contador += valorCastração;
+    }
+
+
+    alert(contador);
+    console.log(contador);
+
+    div_lista.innerHTML += `      Banheiro: R$${listaBanheiroValores[totalBanheiro] * 12} de ${listaBanheiro[banheiro]}<br>
+                                        Telas na janela: ${numJanelas} janelas vai custar R$${numJanelas * 20}<br>
+                                        Remedios: R$${valorRemedio} em ${listaRemedio}<br>
+                                        Castração: R$${valorCastração}<br>
+                                        `;
+    div_descricao.innerHTML = `<p>Adotar um gato é uma grande <b>responsabilidade</b> e envolve dinheiro e muito amor para garantir uma vida de qualidade para o pet. O <b>primeiro ano</b> é o que envolve mais gastos para receber e adaptar o seu felino ${idade} em casa. O valor total é baseado em uma <b>média</b>.</p>`;
+    div_total.innerHTML = `<h1>Valor total: <span>R$${contador}</span></h1>`;
   }
 </script>

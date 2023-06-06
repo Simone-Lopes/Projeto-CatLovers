@@ -75,7 +75,7 @@
   box-shadow: 1px 1px 8px #e79a9e;
   border: 1px solid #FFB8BC;
 }
-.container{
+.container-simulador{
   width: 90%;
   height: auto;
   display: flex;
@@ -151,4 +151,36 @@ select:invalid {
 }
 .div-radio{
   display: flex;
+}
+
+/* resultado */
+.banner-container{
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.racao{
+  width: 40%;
+  height: 100px;
+  padding: 2%;
+  background-color: #F3838D;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 5%;
+}
+.div_descricao{
+  width: 90%;
+  height: auto;
+  text-align: center;
+}
+.div_descricao p{
+  size: 18px;
+  color: #393D46;
 }

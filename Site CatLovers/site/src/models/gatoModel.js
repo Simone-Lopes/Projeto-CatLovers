@@ -4,7 +4,27 @@ function listar() {
     console.log("ACESSEI O GATO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
 
-    select * from usuario join gato on gato.fk_cadastrado = usuario.email;
+    select 
+    g.nomeGato,
+    g.sexo,
+    g.idade,
+    g.porte,
+    g.vacina,
+    g.castrado,
+    g.pelagem,
+    g.tamanho,
+    g.peso,
+    g.historia,
+    g.linkFotos,
+    g.fotos,
+    DATE_FORMAT(g.publicado, '%d/%m/%y %H:%i:%s') as publicado,
+    g.fk_cadastrado,
+    g.fk_adotado,
+    u.nome,
+    u.estado,
+    u.cidade,
+    u.telefoneCelular
+    from usuario as u join gato as g on g.fk_cadastrado = u.email;
     
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
