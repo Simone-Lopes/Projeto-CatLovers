@@ -1,3 +1,4 @@
+
 /* banner inicial */
 .banner-inicial {
   width: 100vw;
@@ -136,7 +137,69 @@
   width: 200px;
   transition: 0.15s ease-in-out;
 }
+/* videos */
+.titulo-video{
+  color: #F3838D;
+  margin: 5%;
+  font-size: 50px;
+  margin: 0%;
+  margin-bottom:5%;
+}
+.video-container {
+  background-color: #FAEAEB;
+  border-radius: 15px;
+  width: 90%;
+  height: 220vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
 
+.video-pai {
+  width: 90%;
+  height: auto;
+  display: flex;
+}
+
+.video{
+  width: 100%;
+  height: 40vh;
+  border-radius: 10px;
+}
+.texto-1{
+  width: 100%;
+  height: 44vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #393D46;
+  margin-right: 5%;
+  align-items: end;
+}
+.texto-1 p{
+  width: 70%; 
+  text-align: right;
+}
+.texto-2{
+  width: 100%;
+  height: 44vh;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  color: #393D46;
+  margin-left: 5%;
+}
+.texto-2 p{
+  width: 70%; 
+  text-align: left;
+}
+span{
+  color: #F3838D;
+}
 /* banner simulado */
 .banner-simulado {
   width: 100vw;

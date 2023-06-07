@@ -146,7 +146,8 @@
 
                             <button class="button-cadastrar" onclick="cadastrar()">Cadastrar</button>
                             <a href="./cadastro.html">Não tem uma conta?</a>
-
+                            
+                            <div id="mensagem_erro"></div>
 
                         </div>
                 </div>
@@ -154,7 +155,7 @@
                     <img src="./assets/circle-loading.gif" id="loading-gif">
                 </div> -->
 
-                <div id="div_erros_login"></div>
+                
             </div>
         </div>
     </div>
@@ -212,14 +213,22 @@
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (nomeVar == "" || cpfVar == "" || estadoVar == "" || cidadeVar == "" || numVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        var validacao = emailVar.endsWith(".com");
+        var validacao2 = emailVar.indexOf("@");
+
+        if (nomeVar == "" || cpfVar == 0 || estadoVar == "" || cidadeVar == "" || numVar == 0 || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "ERRO: Algum campo está em branco...";
+            alert("ERRO: Algum campo está em branco..."); 
 
             finalizarAguardar();
             return false;
         }
-        else {
+        else if(validacao == false || validacao2 == false || senhaVar != confirmacaoSenhaVar){
+            alert("ERRO: Senha ou email inválidos.");
+            finalizarAguardar();
+            return false;
+            
+        }else{
             setInterval(sumirMensagem, 5000)
         }
 

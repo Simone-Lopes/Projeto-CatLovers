@@ -45,15 +45,6 @@ CREATE TABLE gato(
     CONSTRAINT fk_adotado FOREIGN KEY (fk_adotado) REFERENCES usuario(email)
 );
 
--- Tabela para comentários 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario VARCHAR(50),
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(email)
-);
-
 -- Tabela de perguntas
 CREATE TABLE perguntas(
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -122,7 +113,7 @@ INSERT INTO gato values
     JOIN gato AS g 
     ON g.fk_cadastrado = u.email;
     
-    truncate table respostas;
+    truncate table gatos;
     
 
     

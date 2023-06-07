@@ -39,7 +39,7 @@
                 <ul class="navbar2">
                     <li class="paginas"><a href="cadastroGato.html">Cadastrar Gato</a></li>
                     <li>|</li>
-                    <li class="paginas"><a href="../index.html">Sair</a></li>
+                    <li class="paginas"><a onclick="limparSessao()" href="../index.html">Sair</a></li>
                 </ul>
             </div>
 
@@ -75,7 +75,7 @@
             <div id="grafico1" class="display-block">
                 <h3 class="tituloGraficos">
                     <span id="tituloPergunta1"></span>
-                    <span>Você já adotou ou teve interesse em adotar um gato?</span>
+                    <span class="pergunta">Você já adotou ou teve interesse em adotar um gato?</span>
                 </h3>
                 <div class="graph">
                     <canvas id="myChartCanvas1"></canvas>
@@ -85,16 +85,16 @@
                 </div>
             </div>
 
-            <div id="grafico2" class="display-block">
-                <h3 class="tituloGraficos">
-                    <span id="tituloPergunta2"></span>
-                    <span>Você já ouviu a mentira de que gatos não amam os donos?</span>
+            <div id="grafico3" class="display-block">
+                <h3 class="tituloGraficos" class="display-block">
+                    <span id="tituloPergunta3"></span>
+                    <span class="pergunta">Você conhece alguém que diz preferir cães?</span>
                 </h3>
                 <div class="graph">
-                    <canvas id="myChartCanvas2"></canvas>
+                    <canvas id="myChartCanvas3"></canvas>
                 </div>
                 <div class="label-captura">
-                    <p id="avisoCaptura2" style="color: rgb(0, 0, 0)"></p>
+                    <p id="avisoCaptura3" style="color: rgb(0, 0, 0)"></p>
                 </div>
             </div>
         </div>
@@ -105,23 +105,23 @@
                 teste
             </div>
 
-            <div id="grafico3" class="display-block">
-                <h3 class="tituloGraficos" class="display-block">
-                    <span id="tituloPergunta3"></span>
-                    <span>Você conhece alguém que diz preferir cães?</span>
+            <div id="grafico2" class="display-block">
+                <h3 class="tituloGraficos">
+                    <span id="tituloPergunta2"></span>
+                    <span class="pergunta">Você já ouviu a mentira de que gatos não amam os donos?</span>
                 </h3>
                 <div class="graph">
-                    <canvas id="myChartCanvas3"></canvas>
+                    <canvas id="myChartCanvas2"></canvas>
                 </div>
                 <div class="label-captura">
-                    <p id="avisoCaptura3" style="color: rgb(0, 0, 0)"></p>
+                    <p id="avisoCaptura2" style="color: rgb(0, 0, 0)"></p>
                 </div>
             </div>
 
             <div id="grafico4" class="display-block">
                 <h3 class="tituloGraficos">
                     <span id="tituloPergunta4"></span>
-                    <span>Você acreditava em algo sobre gatos e descobriu que não era verídico através da nossa
+                    <span class="pergunta">Você acreditava em algo sobre gatos e descobriu que não era verídico através da nossa
                         plataforma?</span>
                 </h3>
                 <div class="graph">
@@ -237,25 +237,24 @@
         console.log('iniciando plotagem do gráfico...');
 
         // Criando estrutura para plotar gráfico - labels
-        let labels = ['Resposta'];
+        let labels = ['Sim', 'Não'];
 
         // Criando estrutura para plotar gráfico - dados
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Sim',
                 data: [],
                 fill: false,
-                backgroundColor: '#F3838D',
+                backgroundColor: ['#F3838D', 'rgb(199, 52, 52)'],
                 tension: 0.1
-            },
-            {
-                label: 'Não',
-                data: [],
-                fill: false,
-                backgroundColor: 'rgb(199, 52, 52)',
-                tension: 0.1
-            }]
+            }
+            // {
+            //     label: 'Não',
+            //     data: [],
+            //     fill: false,
+            //     backgroundColor: 'rgb(199, 52, 52)',
+            //     tension: 0.1
+            ]
         };
 
         console.log('----------------------------------------------')
@@ -271,8 +270,8 @@
             console.log(dados);
 
             // labels.push(resposta[i]); // legenda abaixo do gráfico
-            dados.datasets[0].data.push(registroSim); // dados do grafico
-            dados.datasets[1].data.push(registroNao); // dados do grafico
+            dados.datasets[0].data.push(registroSim, registroNao); // dados do grafico
+            // dados.datasets[1].data.push(registroNao); // dados do grafico
 
         }
 
@@ -286,7 +285,7 @@
 
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'bar',
+            type: 'pie',
             data: dados,
         };
 
@@ -452,7 +451,6 @@
         var usuariosCadastrados = data.length;
         kpi2.innerHTML = `Número de usuários cadastrados:<h1>${usuariosCadastrados}</h1>`;
     })
-
 
 
 </script>

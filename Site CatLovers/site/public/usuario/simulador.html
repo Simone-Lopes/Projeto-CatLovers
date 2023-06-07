@@ -36,7 +36,7 @@
         <ul class="navbar2">
           <li class="paginas"><a href="cadastroGato.html">Cadastrar Gato</a></li>
           <li>|</li>
-          <li class="paginas"><a href="../index.html">Sair</a></li>
+          <li class="paginas"><a onclick="limparSessao()" href="../index.html">Sair</a></li>
         </ul>
       </div>
 
@@ -216,7 +216,7 @@
     // Alterando visibilidade das divs
     banner_simulado.style.display = 'none';
     banner_perguntas.style.display = 'flex';
-    banner_resposta.style.display = 'flex';
+    banner_resposta.style.display = 'none';
   }
 
   
@@ -232,11 +232,10 @@
     var racao = Number(select_racao.value);
     var banheiro = Number(select_banheiro.value);
     var janela = input_SJ.value;
+    var janelaNao = input_NJ.value;
     var numJanelas = Number(input_numJanelas.value);
     var remedios = Number(select_remedios.value);
     var castrado = select_castrado.value;
-
-    var valorRacao = racao;
     
     //Iniciando soma de valores
 
@@ -247,8 +246,8 @@
 
     for (var i = 0; i < listaRacaoValores.length; i++) {
       if (listaRacaoValores[i] == racao) {
-        valorRacao += listaRacaoValores[i];
-        var marcaRacao = listaRacao[i]
+        racao += listaRacaoValores[i];
+        marcaRacao = listaRacao[i]
       }
     }
 
@@ -282,17 +281,16 @@
 
     var totalBanheiro = 0;
     for (var i = 0; i < listaBanheiroValores.length; i++) {
-  if (i == banheiro) { 
+    if (i == banheiro) { 
     totalBanheiro = listaBanheiroValores[i] * 12;
-    contador = totalBanheiro;
-    break;
+    contador = contador + totalBanheiro;
   }
 }
 
     //Se há janelas e multiplicação
-    var inputJanela = document.getElementById("input_NJ");
-    if (inputJanela.checked) {
-      contador = numJanelas * 20;
+    if (janelaNao == 'nao') {
+      var totalJanela = numJanelas * 20;
+      contador = contador + totalJanela;
     }
 
     //Valor e periodo dos remedios
@@ -303,11 +301,11 @@
     var tipoRemedio = listaRemedio[remedios];
 
     if (remedios == 0) {
-      var valorRemedio = valorRemedio * 2 //6 meses
+      valorRemedio = valorRemedio * 2 //6 meses
       contador = contador + valorRemedio;
 
     } else if (remedios == 1) {
-      var valorRemedio = (valorRemedio * 3) / 2 //8 meses
+      valorRemedio = (valorRemedio * 3) / 2 //8 meses
       contador = contador + valorRemedio;
 
     } else if (remedios == 2) {
@@ -317,7 +315,7 @@
     var valorCastração = 0;
     //Se o gato é castrado
     if (castrado == 'nao') {
-      var valorCastração = 300.00
+      valorCastração = 300.00
       contador += valorCastração;
     }
 
@@ -325,12 +323,14 @@
     alert(contador);
     console.log(contador);
 
-    div_lista.innerHTML += `      Banheiro: R$${listaBanheiroValores[totalBanheiro] * 12} de ${listaBanheiro[banheiro]}<br>
-                                        Telas na janela: ${numJanelas} janelas vai custar R$${numJanelas * 20}<br>
+    div_lista.innerHTML += `      Banheiro: R$${parseInt(totalBanheiro)} de ${listaBanheiro[banheiro]}<br>
+                                        Telas na janela: ${numJanelas} janelas vai custar R$${totalJanela}<br>
                                         Remedios: R$${valorRemedio} em ${listaRemedio}<br>
                                         Castração: R$${valorCastração}<br>
                                         `;
-    div_descricao.innerHTML = `<p>Adotar um gato é uma grande <b>responsabilidade</b> e envolve dinheiro e muito amor para garantir uma vida de qualidade para o pet. O <b>primeiro ano</b> é o que envolve mais gastos para receber e adaptar o seu felino ${idade} em casa. O valor total é baseado em uma <b>média</b>.</p>`;
-    div_total.innerHTML = `<h1>Valor total: <span>R$${contador}</span></h1>`;
+    div_descricao.innerHTML = `<p>Adotar um gato é uma grande <b>responsabilidade</b> e envolve dinheiro e muito amor para garantir uma vida de qualidade para o pet. O <b>primeiro ano</b> é o que envolve mais gastos para receber e adaptar o seu felino ${idade} em casa. Cerca de R$${parseInt(contador / 12)} por mês, o valor total é baseado em uma <b>média</b>.</p>`;
+    div_total.innerHTML = `<h1>Valor total: <span>R$${parseInt(contador)}</span></h1>`;
   }
 </script>
+
+<!-- média de ${(contador * 1320) / 12}% -->
